@@ -27,7 +27,7 @@ public class Teacher {
 	public void setName(String name) {
 		this.name=name;
 	}
-	public void set(School school) {
+	public void setSchool(School school) {
 		this.school=school;
 	}
 }
