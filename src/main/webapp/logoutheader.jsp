@@ -10,8 +10,6 @@
 	<body>
 	<heder>
 	<h1>得点管理システム</h1>
-	<span>${teacher.name }様</span>
-	<a href="Logout.action">ログアウト</a>
 	</heder>	
 	
 	
