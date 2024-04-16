@@ -5,7 +5,7 @@
 <div id="wrapper">
 <div id="main">
 	<h2>ログイン</h2>
-	<c:if test="${loginerror == -1 }">
+	<c:if test="${loginError == -1 }">
 	ログインに失敗しました。IDまたはパスワードが正しくありません。
 	</c:if>
 	<form action="LoginExecute.action">
