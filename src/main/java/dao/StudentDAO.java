@@ -110,9 +110,21 @@ public class StudentDAO extends DAO {
 	}
 	
 //	保存機能の作成（未完成）
-	@SuppressWarnings("null")
-	public boolean save(School school) throws Exception {
-		return (Boolean) null;
+	public boolean save(Student student) throws Exception {
+		Connection con = getConnection();
+		
+		PreparedStatement st=con.prepareStatement(
+				"insert into student values(?, ?, ?, ?)");
+		
+		st.setInt(1,student.getEntYear());
+		st.setString(2,student.getNo());
+		st.setString(3,student.getName());
+		st.setString(4,student.getClassNum());
+		int line=st.executeUpdate();
+		
+		st.close();
+		con.close();
+		return line > 0;
 	}
 
 }
