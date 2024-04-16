@@ -1,5 +1,6 @@
 package bean;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class TestListSubject implements java.io.Serializable{
@@ -25,6 +26,9 @@ public class TestListSubject implements java.io.Serializable{
 		return points;
 	}
 	public String getPoint(int key) {
+		if (points.get(key) == null) {
+			return null;
+		}
 		return (points.get(key)).toString();
 	}
 	
@@ -44,6 +48,9 @@ public class TestListSubject implements java.io.Serializable{
 		this.points = points;
 	}
 	public void putPoint(int key, int value) {
+		if (points == null) {
+			points = new HashMap<>();
+		}
 		this.points.put(key,value);
 	}
 }

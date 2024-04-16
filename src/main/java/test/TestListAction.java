@@ -25,8 +25,8 @@ public class TestListAction extends Action{
 		List<Subject> subjectlist=subjectdao.filter(t.getSchool());
 		
 //		クラス一覧と科目一覧を保存
-		request.setAttribute("classlist", classlist);
-		request.setAttribute("subjectlist", subjectlist);
+		session.setAttribute("classlist", classlist);
+		session.setAttribute("subjectlist", subjectlist);
 //		test_list.jspにエラーメッセージが残っている可能性をつぶす
 		request.setAttribute("testSubjectError", 0);
 		

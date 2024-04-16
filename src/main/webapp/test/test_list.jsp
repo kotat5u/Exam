@@ -7,7 +7,7 @@
 	<div id="main">
 	<h2>成績管理</h2>
 	<%-- フォームを読み込み --%>
-	<%@include file="test_list_from.jsp" %>
+	<%@include file="test_list_form.jsp" %>
 	</div>
 </div>
 <%@include file="../footer.jsp" %>

@@ -10,6 +10,29 @@ import bean.School;
 import bean.Subject;
 
 public class SubjectDAO extends DAO {
+	
+//	科目を1つ抽出
+	public Subject get(String cd, School school) throws Exception {
+		
+		Connection con=getConnection();
+		
+		PreparedStatement st=con.prepareStatement("select name from subject where school_cd = ? and cd = ?");
+		st.setString(1, school.getCd());
+		st.setString(2, cd);
+		ResultSet rs=st.executeQuery();
+		
+		rs.next();
+		Subject s = new Subject();
+		s.setSchool(school);
+		s.setCd(cd);
+		s.setName(rs.getString("name"));
+			
+		st.close();
+		con.close();
+			
+		return s;
+	}
+	
 //	引数で与えられた学校にある科目一覧を取得
 	public List<Subject> filter(School school) throws Exception {
 		List<Subject> list = new ArrayList<>();
