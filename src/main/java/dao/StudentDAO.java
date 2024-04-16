@@ -11,6 +11,8 @@ import bean.Student;
 
 public class StudentDAO extends DAO {
 	
+	
+//	学生一人を抽出する機能を作成
 	public Student get(String no) throws Exception {
 		
 		Connection con=getConnection();
@@ -20,7 +22,8 @@ public class StudentDAO extends DAO {
 		st.setString(1,no);
 		ResultSet rs=st.executeQuery();
 		
-		
+//		データベースに追加するためのStudentオブジェクトの作成
+//		リクエストパラメータから取得した値をセッタを使用して書き込む
 			Student stu=new Student();
 			School sch=new School();
 			stu.setNo(rs.getString("no"));
@@ -39,11 +42,13 @@ public class StudentDAO extends DAO {
 			return stu;
 	}
 	
+//	検索機能で使用する作業をpostfilterとして作成
 	private List<Student> postfilter(ResultSet rSet, School school
 			) throws Exception {
 		
 		List<Student> list=new ArrayList<>();
-		
+
+//		検索結果であるResultSetオブジェクトから１行ずつ取り出し、セッタを使って書き込む
 		while (rSet.next()) {
 			Student stu=new Student();
 			stu.setNo(rSet.getString("no"));
@@ -57,6 +62,7 @@ public class StudentDAO extends DAO {
 		return list;
 	}
 	
+//	検索機能:条件（school, entYear, classNum, isAttend）
 	public List<Student> filter(
 		School school,Integer entYear,String classNum,Boolean isAttend
 			) throws Exception {
@@ -67,11 +73,12 @@ public class StudentDAO extends DAO {
 				"select * from student where school_name = ? and ent_year = ? and class_num = ? and is_attend = ?");
 		ResultSet rs=st.executeQuery();
 		
-		
+//		postfilterを呼び出す
 		return postfilter(rs,school);
 		
 	}
 	
+//	検索機能:条件（school, entYear, isAttend）
 	public List<Student> filter(
 			School school,Integer entYear,Boolean isAttend
 				) throws Exception {
@@ -82,10 +89,11 @@ public class StudentDAO extends DAO {
 					"select * from student where  school_name = ? and ent_year = ? and is_attend = ?");
 			ResultSet rs=st.executeQuery();
 			
+//			postfilterを呼び出す
 			return postfilter(rs,school);
 			
 	}
-	
+//	検索機能:条件（school, isAttend）
 	public List<Student> filter(
 			School school,Boolean isAttend
 				) throws Exception {
@@ -96,7 +104,13 @@ public class StudentDAO extends DAO {
 					"select * from student where  school_name = ? and is_attend = ?");
 			ResultSet rs=st.executeQuery();
 			
+//			postfilterを呼び出す
 			return postfilter(rs,school);
 			
+	}
+	
+//	保存機能の作成
+	public boolean save(School school) throws Exception {
+		
 	}
 }
