@@ -1,3 +1,5 @@
+<%-- 成績一覧のフォーム部分 --%>
+
 <%@ page pageEncoding="UTF-8" %>
 
 <div>
