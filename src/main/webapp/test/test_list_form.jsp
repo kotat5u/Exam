@@ -1,6 +1,8 @@
+<%-- 成績一覧のフォーム部分 --%>
+
 <%@ page pageEncoding="UTF-8" %>
 
-<div>
+	<div>
 		科目情報
 		<form action="TestListSubjectExecute.action">
 		<table>
@@ -34,7 +36,7 @@
 		</tr>
 		</table>
 		</form>
-		<c:if test="${tstSubjectError == -1 }">
+		<c:if test="${testSubjectError == -1 }">
 		入学年度とクラスと科目を入力してください。
 		</c:if>
 	</div>

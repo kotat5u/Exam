@@ -4,6 +4,7 @@ import java.util.List;
 
 import bean.Teacher;
 import bean.TestListSubject;
+import dao.SubjectDAO;
 import dao.TestListSubjectDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -32,9 +33,12 @@ public class TestListSubjectExecuteAction extends Action{
 //		条件にあう成績一覧を取得
 		List<TestListSubject> list=dao.filter(entYear, classNum, subject, t.getSchool());
 		
+		
 //		成績一覧と科目を格納
 		request.setAttribute("testListSubject", list);
-		request.setAttribute("choiceSubject", subject);
+		
+		SubjectDAO sdao=new SubjectDAO();
+		request.setAttribute("choiceSubject", sdao.get(subject, t.getSchool()));
 		
 		return "test_list_subject.jsp";
 	}
