@@ -11,6 +11,9 @@ import bean.TestListSubject;
 
 public class TestListSubjectDAO extends DAO{
 	
+	private String baseSql = "select * from test inner join student on test.student_no = student.no where test.school_cd = ?";
+	
+//	SQLの結果をListに格納する
 	private List<TestListSubject>postfilter(ResultSet rSet) throws Exception {
 		List<TestListSubject> list = new ArrayList<>();
 		while (rSet.next()) {
@@ -25,7 +28,7 @@ public class TestListSubjectDAO extends DAO{
 		return list;
 	}
 	
-	private String baseSql = "select * from test inner join student on test.student_no = student.no where test.school_cd = ?";
+//	入学年度、クラス、科目、学校で絞り込んで成績を検索
 	public List<TestListSubject>filter(int entYear, String classNum, String subject, School school) throws Exception {
 		List<TestListSubject> list = new ArrayList<>();
 		Connection con = getConnection();
@@ -36,7 +39,7 @@ public class TestListSubjectDAO extends DAO{
 		st.setString(3, classNum);
 		st.setString(4, subject);
 		ResultSet rs=st.executeQuery();
-//		
+//		SQLの結果をListに格納する処理
 		list = postfilter(rs);
 		
 		st.close();
