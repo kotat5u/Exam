@@ -3,7 +3,6 @@
 <%@include file="../header.jsp" %>
 <%@include file="../sidebar.jsp" %>
 <!DOCTYPE html>
-
 <html>
 	<heder>
 	<h2>科目情報登録</h2>
