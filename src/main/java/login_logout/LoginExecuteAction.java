@@ -14,16 +14,20 @@ public class LoginExecuteAction extends Action{
 		String password=request.getParameter("password");
 		
 		TeacherDAO dao=new TeacherDAO();
+//		入力されたID,PWでログインを試みる。ログインに成功したらそのユーザー(先生)の情報が返ってくる
 		Teacher t=dao.login(id, password);
 		
 		HttpSession session=request.getSession();
 		
+//		tがnull(=ログインに失敗した)ならlogin.jspに処理を戻す
 		if (t.getSchool() == null) {
-			request.setAttribute("loginerror", -1);
+			request.setAttribute("loginError", -1);
 			return "login.jsp";
 		}
 		
-		request.setAttribute("loginerror", 0);
+//		"loginerror"が-1だとlogin.jspでエラーメッセージが出続けてしまうため0にする
+		request.setAttribute("loginError", 0);
+//		ユーザー(先生)の情報をセッションに格納
 		session.setAttribute("teacher", t);
 		
 		return "../mainmenu/mainmenu.jsp";

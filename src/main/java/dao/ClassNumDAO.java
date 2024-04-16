@@ -11,7 +11,7 @@ import bean.School;
 
 public class ClassNumDAO extends DAO{
 
-	//	login機能
+	//	引数で与えられた学校のクラス一覧を取得
 	public List<String> filter(School school) throws Exception {
 		List<String> list = new ArrayList<>();
 		Connection con = getConnection();
@@ -23,6 +23,7 @@ public class ClassNumDAO extends DAO{
 		while (rs.next()) {
 			String s;
 			s = rs.getString("class_num");
+			System.out.println(s);
 			list.add(s);
 		}
 		
