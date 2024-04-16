@@ -6,6 +6,7 @@
 	<%@include file="../sidebar.jsp" %>
 	<div id="main">
 	<h2>成績管理</h2>
+	<%-- フォームを読み込み --%>
 	<%@include file="test_list_from.jsp" %>
 	</div>
 </div>
