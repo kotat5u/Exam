@@ -10,6 +10,7 @@ import bean.School;
 import bean.Subject;
 
 public class SubjectDAO extends DAO {
+//	引数で与えられた学校にある科目一覧を取得
 	public List<Subject> filter(School school) throws Exception {
 		List<Subject> list = new ArrayList<>();
 		Connection con = getConnection();
