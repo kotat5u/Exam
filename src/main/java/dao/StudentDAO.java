@@ -24,22 +24,24 @@ public class StudentDAO extends DAO {
 		
 //		データベースに追加するためのStudentオブジェクトの作成
 //		リクエストパラメータから取得した値をセッタを使用して書き込む
-			Student stu=new Student();
-			School sch=new School();
-			stu.setNo(rs.getString("no"));
-			stu.setName(rs.getString("name"));
-			stu.setEntYear(rs.getInt("entYear"));
-			stu.setClassNum(rs.getString("classNum"));
-			stu.setIsAttend(rs.getBoolean("isAttend"));
-			sch.setCd(rs.getString("cd"));
-			sch.setName(rs.getString("name"));
-			stu.setSchool(sch);
+		
+		rs.next();
+		Student stu=new Student();
+		School sch=new School();
+		stu.setNo(rs.getString("no"));
+		stu.setName(rs.getString("name"));
+		stu.setEntYear(rs.getInt("entYear"));
+		stu.setClassNum(rs.getString("classNum"));
+		stu.setIsAttend(rs.getBoolean("isAttend"));
+		sch.setCd(rs.getString("cd"));
+		sch.setName(rs.getString("name"));
+		stu.setSchool(sch);
 			
 			
-			st.close();
-			con.close();
+		st.close();
+		con.close();
 			
-			return stu;
+		return stu;
 	}
 	
 //	検索機能で使用する作業をpostfilterとして作成
