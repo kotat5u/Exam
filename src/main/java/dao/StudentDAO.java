@@ -116,12 +116,13 @@ public class StudentDAO extends DAO {
 		Connection con = getConnection();
 		
 		PreparedStatement st=con.prepareStatement(
-				"insert into student values(?, ?, ?, ?)");
+				"insert into student values(?, ?, ?, ?,true,?)");
 		
 		st.setInt(1,student.getEntYear());
 		st.setString(2,student.getNo());
 		st.setString(3,student.getName());
 		st.setString(4,student.getClassNum());
+		st.setString(5,(student.getSchool()).getCd());
 		int line=st.executeUpdate();
 		
 		st.close();
