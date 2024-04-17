@@ -1,4 +1,4 @@
-package create_update;
+package student;
 
 import bean.Student;
 import dao.StudentDAO;
