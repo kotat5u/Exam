@@ -9,7 +9,7 @@
 	<h2>成績管理</h2>
 	<%@include file="test_list_form.jsp" %>
 	<div>
-	科目:${choiceStudnt.name }(${choiceStudent.no })
+	氏名:${choiceStudnt.name }(${choiceStudent.no })
 	<table>
 		<tr>
 			<th>科目名</th>
