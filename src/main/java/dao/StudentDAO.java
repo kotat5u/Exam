@@ -109,7 +109,7 @@ public class StudentDAO extends DAO {
 			
 	}
 	
-//	保存機能の作成（未完成）
+//	保存機能の作成
 	public boolean save(Student student) throws Exception {
 		Connection con = getConnection();
 		
