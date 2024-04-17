@@ -37,7 +37,8 @@ public class TestListSubjectDAO extends DAO{
 	public List<TestListSubject>filter(int entYear, String classNum, String subject, School school) throws Exception {
 		List<TestListSubject> list = new ArrayList<>();
 		Connection con = getConnection();
-//		
+//	
+		
 		PreparedStatement st=con.prepareStatement(baseSql + " and c.ent_year = ? and a.class_num = ? and a.subject_cd = ?");
 		st.setString(1, school.getCd());
 		st.setInt(2, entYear);
