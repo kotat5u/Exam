@@ -30,9 +30,9 @@ public class StudentDAO extends DAO {
 		School sch=new School();
 		stu.setNo(rs.getString("no"));
 		stu.setName(rs.getString("name"));
-		stu.setEntYear(rs.getInt("entYear"));
-		stu.setClassNum(rs.getString("classNum"));
-		stu.setIsAttend(rs.getBoolean("isAttend"));
+		stu.setEntYear(rs.getInt("ent_year"));
+		stu.setClassNum(rs.getString("class_num"));
+		stu.setIsAttend(rs.getBoolean("is_attend"));
 		sch.setCd(rs.getString("cd"));
 		sch.setName(rs.getString("name"));
 		stu.setSchool(sch);
