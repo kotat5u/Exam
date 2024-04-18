@@ -39,6 +39,8 @@ public class TestListSubjectExecuteAction extends Action{
 		
 		SubjectDAO sdao=new SubjectDAO();
 		request.setAttribute("choiceSubject", sdao.get(subject, t.getSchool()));
+		request.setAttribute("choiceYear", entYear);
+		request.setAttribute("choiceClass", classNum);
 		
 		return "test_list_subject.jsp";
 	}
