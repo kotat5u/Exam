@@ -12,7 +12,7 @@
 	</div>
 	<div>
 		<div>成績管理</div>
-		<a href="TestRegist.action">成績登録</a>
+		<a href="../test/TestRegist.action">成績登録</a>
 		<a href="../test/TestList.action">成績参照</a>
 	</div>
 	<div>
