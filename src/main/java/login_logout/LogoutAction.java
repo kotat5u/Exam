@@ -8,7 +8,7 @@ import tool.Action;
 public class LogoutAction extends Action{
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session=request.getSession();
-//		セッションに格納されたユーザー(先生)の情報を削除
+//		セッションを終了
 		session.invalidate();
 		return "logout.jsp";
 	}
