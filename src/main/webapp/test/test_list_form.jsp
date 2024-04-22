@@ -15,7 +15,7 @@
 		<tr>
 		<td><select name="f1">
 			<c:choose>
-				<c:when test=${empty choiceYear }><option value="-1" selected hidden>--------</option></c:when>
+				<c:when test="${empty choiceYear }"><option value="-1" selected hidden>--------</option></c:when>
 				<c:otherwise><option value="${choiceYear }" selected hidden>${choiceYear }</option></c:otherwise>
 			</c:choose>
 			<c:forEach var="year" begin="2020" end="2030">
@@ -24,7 +24,7 @@
 		</select></td>
 		<td><select name="f2">
 			<c:choose>
-				<c:when test=${empty choiceClass }<option value="notselect" selected hidden>--------</option></c:when>
+				<c:when test="${empty choiceClass }"><option value="notselect" selected hidden>--------</option></c:when>
 				<c:otherwise><option value="${choiceClass }" selected hidden>${choiceClass }</option></c:otherwise>
 			</c:choose>
 			<c:forEach var="num" items="${classlist }">
@@ -33,8 +33,8 @@
 		</select></td>
 		<td><select name="f3">
 			<c:choose>
-				<c:when test=${empty choiceSbject }<option value="notselect" selected hidden>--------</option></c:when>
-				<c:otherwise><option value="${choiceSbject.name }" selected hidden>${choiceSbject.name }</option></c:otherwise>
+				<c:when test="${empty choiceSubject }"><option value="notselect" selected hidden>--------</option></c:when>
+				<c:otherwise><option value="${choiceSubject.name }" selected hidden>${choiceSubject.name }</option></c:otherwise>
 			</c:choose>
 			<c:forEach var="s" items="${subjectlist }">
 				<option value=${s.cd }>${s.name }</option>
@@ -53,7 +53,10 @@
 	<div>
 		学生情報
 		<form action="TestListStudentExecute.action">
-			<input type="text" name="f4" placeholder="学生番号を入力してください" required>
+			<c:choose>
+				<c:when test="${empty choiceStudent }"><input type="text" name="f4" placeholder="学生番号を入力してください" required></c:when>
+				<c:otherwise><input type="text" name="f4" value="${choiceStudent.no }" placeholder="学生番号を入力してください" required></c:otherwise>
+			</c:choose>
 			<input type="submit" value="検索">
 		</form>
 	</div>

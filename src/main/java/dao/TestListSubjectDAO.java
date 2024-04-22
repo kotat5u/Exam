@@ -11,7 +11,7 @@ import bean.TestListSubject;
 
 public class TestListSubjectDAO extends DAO{
 	
-	private String baseSql = "select c.ent_year as ent_yaer, c.class_num as class, c.no as no, c.name as name, a.no as an, a.point as ap, b.no as bn, b.point as bp from test a left join test as b on a.student_no = b.student_no and a.subject_cd = b.subject_cd and a.no <> b.no inner join student as c on a.student_no = c.no where (a.no = 1 or (a.no = 2 and b.no is null)) and a.school_cd = ?";
+	private String baseSql = "select c.ent_year as ent_yaer, c.class_num as class, c.no as no, c.name as name, a.no as an, a.point as ap, b.no as bn, b.point as bp from test as a left join test as b on a.student_no = b.student_no and a.subject_cd = b.subject_cd and a.no <> b.no inner join student as c on a.student_no = c.no where (a.no = 1 or (a.no = 2 and b.no is null)) and a.school_cd = ?";
 	
 //	SQLの結果をListに格納する
 	private List<TestListSubject>postfilter(ResultSet rSet) throws Exception {
