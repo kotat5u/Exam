@@ -6,9 +6,9 @@
 	<%@include file="../sidebar.jsp" %>
 	<div id="main">
 	<h2>成績管理</h2>
-	<%@include file="test_list_from.jsp" %>
+	<%@include file="test_list_form.jsp" %>
 	<div>
-	科目:${choiceSubject }
+	科目:${choiceSubject.name }
 	<table>
 		<tr>
 			<th>入学年度</th>
@@ -24,7 +24,8 @@
 			<td>${test.classNum }</td>
 			<td>${test.studentNo }</td>
 			<td>${test.studentName }</td>
-			<td><c:if test="${test. }"></td>
+			<td>${empty test.getPoint(1) ? "-" : test.getPoint(1) }</td>
+			<td>${empty test.getPoint(2) ? "-" : test.getPoint(2) }</td>
 		</tr>
 		</c:forEach>
 	</table>
@@ -32,3 +33,4 @@
 	</div>
 </div>
 <%@include file="../footer.jsp" %>
+

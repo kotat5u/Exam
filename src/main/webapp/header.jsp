@@ -11,7 +11,7 @@
 	<heder>
 	<h1>得点管理システム</h1>
 	<span>${teacher.name }様</span>
-	<a href="Logout.action">ログアウト</a>
+	<a href="../login_logout/Logout.action">ログアウト</a>
 	</heder>	
 	
 	

@@ -23,7 +23,6 @@ public class ClassNumDAO extends DAO{
 		while (rs.next()) {
 			String s;
 			s = rs.getString("class_num");
-			System.out.println(s);
 			list.add(s);
 		}
 		

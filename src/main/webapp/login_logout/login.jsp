@@ -10,7 +10,7 @@
 	</c:if>
 	<form action="LoginExecute.action">
 	<input type="text" name="id" placeholder="ID" required><br><%-- required : 必須項目 --%>
-	<input type="password" name="password" placeholder="PASSWORD" required><br>
+	<input type="password" name="password" placeholder="パスワード" required><br>
 	<input type="checkbox" name="check_d_ps"><label for="check_d_ps">パスワードを表示</label><br>
 	<input type="submit" value="ログイン"><br>
 	</form>

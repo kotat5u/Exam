@@ -24,22 +24,25 @@ public class StudentDAO extends DAO {
 		
 //		データベースに追加するためのStudentオブジェクトの作成
 //		リクエストパラメータから取得した値をセッタを使用して書き込む
-			Student stu=new Student();
-			School sch=new School();
-			stu.setNo(rs.getString("no"));
-			stu.setName(rs.getString("name"));
-			stu.setEntYear(rs.getInt("entYear"));
-			stu.setClassNum(rs.getString("classNum"));
-			stu.setIsAttend(rs.getBoolean("isAttend"));
-			sch.setCd(rs.getString("cd"));
-			sch.setName(rs.getString("name"));
-			stu.setSchool(sch);
+		
+		rs.next();
+		Student stu=new Student();
+		School sch=new School();
+		stu.setNo(rs.getString("no"));
+		stu.setName(rs.getString("name"));
+		stu.setEntYear(rs.getInt("ent_year"));
+		stu.setClassNum(rs.getString("class_num"));
+		stu.setIsAttend(rs.getBoolean("is_attend"));
+		sch.setCd(rs.getString("cd"));
+		sch.setName(rs.getString("name"));
+		stu.setSchool(sch);
 			
 			
-			st.close();
-			con.close();
+		st.close();
+		con.close();
 			
-			return stu;
+		
+		return stu;
 	}
 	
 //	検索機能で使用する作業をpostfilterとして作成
@@ -47,15 +50,14 @@ public class StudentDAO extends DAO {
 			) throws Exception {
 		
 		List<Student> list=new ArrayList<>();
-
 //		検索結果であるResultSetオブジェクトから１行ずつ取り出し、セッタを使って書き込む
 		while (rSet.next()) {
 			Student stu=new Student();
 			stu.setNo(rSet.getString("no"));
 			stu.setName(rSet.getString("name"));
-			stu.setEntYear(rSet.getInt("entYear"));
-			stu.setClassNum(rSet.getString("classNum"));
-			stu.setIsAttend(rSet.getBoolean("isAttend"));
+			stu.setEntYear(rSet.getInt("ent_Year"));
+			stu.setClassNum(rSet.getString("class_Num"));
+			stu.setIsAttend(rSet.getBoolean("is_Attend"));
 			stu.setSchool(school);
 			list.add(stu);
 		}
@@ -70,11 +72,17 @@ public class StudentDAO extends DAO {
 		Connection con = getConnection();
 		
 		PreparedStatement st=con.prepareStatement(
-				"select * from student where school_name = ? and ent_year = ? and class_num = ? and is_attend = ?");
+				"select * from student where school_cd = ? and ent_year = ? and class_num = ? and is_attend = ?");
+		st.setString(1, school.getCd());
+		st.setInt(2, entYear);
+		st.setString(3, classNum);
+		st.setBoolean(4, isAttend);
 		ResultSet rs=st.executeQuery();
-		
+		List<Student> list=postfilter(rs,school);
+		st.close();
+		con.close();
 //		postfilterを呼び出す
-		return postfilter(rs,school);
+		return list;
 		
 	}
 	
@@ -86,11 +94,16 @@ public class StudentDAO extends DAO {
 			Connection con = getConnection();
 			
 			PreparedStatement st=con.prepareStatement(
-					"select * from student where  school_name = ? and ent_year = ? and is_attend = ?");
+					"select * from student where  school_cd = ? and ent_year = ? and is_attend = ?");
+			st.setString(1, school.getCd());
+			st.setInt(2, entYear);
+			st.setBoolean(3, isAttend);
 			ResultSet rs=st.executeQuery();
-			
+			List<Student> list=postfilter(rs,school);
+			st.close();
+			con.close();
 //			postfilterを呼び出す
-			return postfilter(rs,school);
+			return list;
 			
 	}
 //	検索機能:条件（school, isAttend）
@@ -101,18 +114,54 @@ public class StudentDAO extends DAO {
 			Connection con = getConnection();
 			
 			PreparedStatement st=con.prepareStatement(
-					"select * from student where  school_name = ? and is_attend = ?");
+					"select * from student where  school_cd = ? and is_attend = ?");
+			st.setString(1, school.getCd());
+			st.setBoolean(2, isAttend);
 			ResultSet rs=st.executeQuery();
-			
+			List<Student> list=postfilter(rs,school);
+			st.close();
+			con.close();
 //			postfilterを呼び出す
-			return postfilter(rs,school);
+			return list;
 			
 	}
 	
-//	保存機能の作成（未完成）
-	@SuppressWarnings("null")
-	public boolean save(School school) throws Exception {
-		return (Boolean) null;
+	public List<Student> filter(
+			School school
+				) throws Exception {
+			
+			Connection con = getConnection();
+			
+			PreparedStatement st=con.prepareStatement(
+					"select * from student where  school_cd = ?");
+			st.setString(1, school.getCd());
+			ResultSet rs=st.executeQuery();
+			List<Student> list=postfilter(rs,school);
+			st.close();
+			con.close();
+//			postfilterを呼び出す
+			return list;
+			
 	}
-
+	
+//	保存機能の作成
+	public boolean save(Student student) throws Exception {
+		Connection con = getConnection();
+		
+		PreparedStatement st=con.prepareStatement(
+				"insert into student values(?, ?, ?, ?,true,?)");
+		
+		st.setInt(1,student.getEntYear());
+		st.setString(2,student.getNo());
+		st.setString(3,student.getName());
+		st.setString(4,student.getClassNum());
+		st.setString(5,(student.getSchool()).getCd());
+		int line=st.executeUpdate();
+		
+		st.close();
+		con.close();
+		return line > 0;
+	}
+	
 }
+
