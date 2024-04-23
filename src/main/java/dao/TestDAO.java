@@ -68,4 +68,42 @@ public class TestDAO extends DAO {
 		
 		return list;
 	}
+	
+	private boolean save(Test test, Connection con) throws Exception {
+		PreparedStatement st1=con.prepareStatement("select * from test where student_no = ? and subject_cd = ?");
+		st1.setString(1, test.getStudent().getNo());
+		st1.setString(2, test.getSubject().getCd());
+		
+		ResultSet rs1=st1.executeQuery();
+		
+		if (rs1.next()) {
+			PreparedStatement st2=con.prepareStatement("update test set no = ?, point = ? where student_no = ? and subject_cd = ?");
+			st2.setInt(1, test.getNo());
+			st2.setInt(2, test.getPoint());
+			st2.setString(3, test.getStudent().getNo());
+			st2.setString(4, test.getSubject().getCd());
+			return st2.executeUpdate() == 1;
+		} else {
+			PreparedStatement st2=con.prepareStatement("insert into test values(?, ?, ?, ?, ?, ?)");
+			st2.setString(1, test.getStudent().getNo());
+			st2.setString(2, test.getSubject().getCd());
+			st2.setString(3, test.getSchool().getCd());
+			st2.setInt(4, test.getNo());
+			st2.setInt(5, test.getPoint());
+			st2.setString(6, test.getClassNum());
+			return st2.executeUpdate() == 1;
+		}
+	}
+	
+	public boolean save(List<Test> list) throws Exception {
+		Connection con=getConnection();
+		boolean isError = false;
+		for (Test test : list) {
+			if (!save(test, con)) {
+				isError = true;
+				break;
+			}
+		}
+		return isError;
+	}
 }

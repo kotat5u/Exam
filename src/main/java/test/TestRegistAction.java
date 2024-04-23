@@ -45,7 +45,7 @@ public class TestRegistAction extends Action{
 			int num=Integer.parseInt(request.getParameter("f4"));
 		
 //			入力に不備があれば処理を戻す
-			if (entYear == -1 || classNum == "notselect" || subjectCd == "notselect" || num == -1) {
+			if (entYear == -1 || classNum.equals("notselect") || subjectCd.equals("notselect") || num == -1) {
 				request.setAttribute("testRegistError", -1);
 				request.setAttribute("first", "first");
 				return "test_regist.jsp";
@@ -55,12 +55,11 @@ public class TestRegistAction extends Action{
 			TestDAO testdao=new TestDAO();
 			List<Test> list=testdao.filter(entYear, classNum, subject, num, school);
 			
-			request.setAttribute("testRegistList", list);
+			session.setAttribute("testRegistList", list);
 			request.setAttribute("choiceYear", entYear);
 			request.setAttribute("choiceClass", classNum);
 			request.setAttribute("choiceSubject", subject);
-			request.setAttribute("choiceNum", num);
-			session.setAttribute("size", list.size());
+			session.setAttribute("choiceNum", num);
 		}
 		return "test_regist.jsp";
 	}

@@ -18,7 +18,7 @@ public class TestListSubjectExecuteAction extends Action{
 		String subject=request.getParameter("f3");
 		
 //		入力に不備があれば処理を戻す
-		if (entYear == -1 || classNum == "notselect" || subject == "notselect") {
+		if (entYear == -1 || classNum.equals("notselect") || subject.equals("notselect")) {
 			request.setAttribute("testSubjectError", -1);
 			return "test_list.jsp";
 		}

@@ -26,7 +26,12 @@
 			<td>${test.classNum }</td>
 			<td>${test.student.no }</td>
 			<td>${test.student.name }</td>
-			<td><input type="number" name="${test.student.no }" value="${test.point }" min="0" max="100"></td>
+			<td>
+			<c:choose>
+				<c:when test="${empty test.point }"><input type="number" name="${test.student.no }" min="0" max="100"></c:when>
+				<c:otherwise><input type="number" name="${test.student.no }" value="${test.point}" min="0" max="100"></c:otherwise>
+			</c:choose>
+			</td>
 		</tr>
 		</c:forEach>
 		</table>
