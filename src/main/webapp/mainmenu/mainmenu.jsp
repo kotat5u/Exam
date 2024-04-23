@@ -16,7 +16,7 @@
 		<a href="../test/TestList.action">成績参照</a>
 	</div>
 	<div>
-		<a href="SubjectList.action">科目管理</a>
+		<a href="../subject/SubjectList.action">科目管理</a>
 	</div>
 	</div>
 </div>
