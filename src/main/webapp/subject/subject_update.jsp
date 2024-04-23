@@ -6,11 +6,11 @@
 	<heder>
 	<h2>科目情報変更</h2>
 	<label>科目コード</label>
-    <input href="SubjectUpdateExecuteAction.jsp">${code}</input>
+    <input href="SubjectUpdateExecute.Action">${code}</input>
     <label>科目名</label>
-   	<input href="SubjectUpdateExecuteAction.jsp">${name}</input>
+   	<input href="SubjectUpdateExecute.Action">${name}</input>
     <input type="submit" value="変更">
-    <a href="SubjectList.Action">戻る</a>
+    <a href="subject_list.jsp">戻る</a>
     <body>
 	</heder>	
 	

@@ -1,24 +1,42 @@
-<%@ page pageEncoding="UTF-8" %>
+<%@page contentType="text/html; charset=UTF-8"%>
 
-<%@include file="../header.jsp" %>
-<%@include file="../sidebar.jsp" %>
-<!DOCTYPE html>
+
+<%@include file="../header.jsp"%>
+<%@include file="../sidebar.jsp"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<form action="SubjectCreateExecute.action">
+	<input type="text" maxlength="3" required id="readnly" name="cd"
+		sbcode="subject" value="科目コードを入力して下さい">
+    <input type="text"maxlength="20" required id="readnly" name="name" 
+    sbcode="subject" value="科目名を入力して下さい"></input> 
+	<input type="submit" value="登録">
+</form>
+<a href="subject_list.jsp">戻る</a>
+<body>
+	<%@include file="../footer.jsp"%>
+</heder>
+
+
+<%-- <!DOCTYPE html>
 <html>
-	<heder>
-	<h2>科目情報登録</h2>
-	<label>科目コード</label>
-	<form name="div" onSubmit="return false">
-	<input type="text" maxlength="3" required id="readnly" name="cd" sbcode="subject"
-    value ="科目名を入力して下さい"  href="SubjectUpdateExecuteAction.jsp" >${cd}</input>
-  
-    <label>科目名</label>
-   	<input type="text" maxlength="20" required id="readnly" name="name" sbcode="subject" 
-   	value ="科目名を入力して下さい" href="SubjectUpdateExecuteAction.jsp">${name}</input>
-    <input type="submit"  onclick="return validateInput()"  value="変更">
-      <p id="error_msg" style="color: orange;"></p>
-      
-<!-- エラー処理 -->
-    <script>
+<heder>
+<h2>科目情報登録</h2>
+<label>科目コード</label>
+<form name="div" onSubmit="return false">
+	<input type="text" maxlength="3" required id="readnly" name="cd"
+		sbcode="subject" value="科目名を入力して下さい"
+		href="SubjectListAction.java">${cd}</input> <label>科目名</label>
+	<input type="text" maxlength="20" required id="readnly" name="name"
+		sbcode="subject" value="科目名を入力して下さい"
+		href="SubjectListAction.java">${name}</input> <input
+		type="submit"
+		onclick="http://localhost:8080/tokutenkanri/subject/create.jsp"
+		value="登録">
+	<p id="error_msg" style="color: orange;"></p>
+
+	<!-- エラー処理 -->
+	<script>
     var readnlyList = []; 
 
     function checkDuplicate() {
@@ -43,8 +61,8 @@
     }
 </script>
 
-    </form>
-    <a href="SubjectList.Action">戻る</a>
-    <body>
-<%@include file="../footer.jsp" %>
-	</heder>
+</form>
+<a href="subject_list.jsp">戻る</a>
+<body>
+	<%@include file="../footer.jsp"%>
+</heder> --%>
