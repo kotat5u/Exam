@@ -56,4 +56,37 @@ public class SubjectDAO extends DAO {
 
 		return list;
 	}
+
+	
+	
+
+public void insert(Subject Subject) throws Exception {
+	Connection con=getConnection();
+
+	PreparedStatement st=con.prepareStatement(
+		"insert into product values(null, ?, ?)");
+	st.setString(1, Subject.getName());
+	st.setString(2, Subject.getCd());
+	
+	
+	st.executeUpdate();
+
+
+	st.close();
+	con.close();
+	
+}
+
+
+
+
+public List<Subject> filter(String subject) {
+	// TODO 自動生成されたメソッド・スタブ
+	return null;
+}
+
+
+
+
+
 }
