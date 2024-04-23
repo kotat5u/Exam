@@ -27,8 +27,6 @@ public class TestListAction extends Action{
 //		クラス一覧と科目一覧を保存
 		session.setAttribute("classlist", classlist);
 		session.setAttribute("subjectlist", subjectlist);
-//		test_list.jspにエラーメッセージが残っている可能性をつぶす
-		request.setAttribute("testSubjectError", 0);
 		
 		return "test_list.jsp";
 	}

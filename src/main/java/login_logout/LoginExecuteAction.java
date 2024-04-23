@@ -25,8 +25,7 @@ public class LoginExecuteAction extends Action{
 			return "login.jsp";
 		}
 		
-//		"loginerror"が-1だとlogin.jspでエラーメッセージが出続けてしまうため0にする
-		request.setAttribute("loginError", 0);
+
 //		ユーザー(先生)の情報をセッションに格納
 		session.setAttribute("teacher", t);
 		
