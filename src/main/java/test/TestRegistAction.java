@@ -60,6 +60,7 @@ public class TestRegistAction extends Action{
 			request.setAttribute("choiceClass", classNum);
 			request.setAttribute("choiceSubject", subject);
 			request.setAttribute("choiceNum", num);
+			session.setAttribute("size", list.size());
 		}
 		return "test_regist.jsp";
 	}

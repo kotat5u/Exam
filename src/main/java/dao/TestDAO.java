@@ -52,7 +52,7 @@ public class TestDAO extends DAO {
 		PreparedStatement st=con.prepareStatement("select student.no, student.name, student.ent_year, student.is_attend, subject.cd, subject.name, " + target
 				+ " from student inner join subject on student.school_cd = subject.school_cd left outer join "
 				+ " test as a left join test as b on a.student_no = b.student_no and a.subject_cd = b.subject_cd and a.no <> b.no on student.no = a.student_no and subject.cd = a.subject_cd"
-				+ " where (a.no = 1 or (a.no = 2 and b.no is null)) and student.school_cd = ? and student.ent_year = ? and student.class_num = ? and subject.cd = ?;");
+				+ " where ((a.no is null and b.no is null) or a.no = 1 or (a.no = 2 and b.no is null)) and student.school_cd = ? and student.ent_year = ? and student.class_num = ? and subject.cd = ?;");
 		
 		
 		st.setString(1, school.getCd());
