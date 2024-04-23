@@ -50,7 +50,6 @@ public class StudentDAO extends DAO {
 			) throws Exception {
 		
 		List<Student> list=new ArrayList<>();
-
 //		検索結果であるResultSetオブジェクトから１行ずつ取り出し、セッタを使って書き込む
 		while (rSet.next()) {
 			Student stu=new Student();
@@ -73,11 +72,17 @@ public class StudentDAO extends DAO {
 		Connection con = getConnection();
 		
 		PreparedStatement st=con.prepareStatement(
-				"select * from student where school_name = ? and ent_year = ? and class_num = ? and is_attend = ?");
+				"select * from student where school_cd = ? and ent_year = ? and class_num = ? and is_attend = ?");
+		st.setString(1, school.getCd());
+		st.setInt(2, entYear);
+		st.setString(3, classNum);
+		st.setBoolean(4, isAttend);
 		ResultSet rs=st.executeQuery();
-		
+		List<Student> list=postfilter(rs,school);
+		st.close();
+		con.close();
 //		postfilterを呼び出す
-		return postfilter(rs,school);
+		return list;
 		
 	}
 	
@@ -89,11 +94,16 @@ public class StudentDAO extends DAO {
 			Connection con = getConnection();
 			
 			PreparedStatement st=con.prepareStatement(
-					"select * from student where  school_name = ? and ent_year = ? and is_attend = ?");
+					"select * from student where  school_cd = ? and ent_year = ? and is_attend = ?");
+			st.setString(1, school.getCd());
+			st.setInt(2, entYear);
+			st.setBoolean(3, isAttend);
 			ResultSet rs=st.executeQuery();
-			
+			List<Student> list=postfilter(rs,school);
+			st.close();
+			con.close();
 //			postfilterを呼び出す
-			return postfilter(rs,school);
+			return list;
 			
 	}
 //	検索機能:条件（school, isAttend）
@@ -104,11 +114,33 @@ public class StudentDAO extends DAO {
 			Connection con = getConnection();
 			
 			PreparedStatement st=con.prepareStatement(
-					"select * from student where  school_name = ? and is_attend = ?");
+					"select * from student where  school_cd = ? and is_attend = ?");
+			st.setString(1, school.getCd());
+			st.setBoolean(2, isAttend);
 			ResultSet rs=st.executeQuery();
-			
+			List<Student> list=postfilter(rs,school);
+			st.close();
+			con.close();
 //			postfilterを呼び出す
-			return postfilter(rs,school);
+			return list;
+			
+	}
+	
+	public List<Student> filter(
+			School school
+				) throws Exception {
+			
+			Connection con = getConnection();
+			
+			PreparedStatement st=con.prepareStatement(
+					"select * from student where  school_cd = ?");
+			st.setString(1, school.getCd());
+			ResultSet rs=st.executeQuery();
+			List<Student> list=postfilter(rs,school);
+			st.close();
+			con.close();
+//			postfilterを呼び出す
+			return list;
 			
 	}
 	
@@ -130,5 +162,5 @@ public class StudentDAO extends DAO {
 		con.close();
 		return line > 0;
 	}
-
+	
 }

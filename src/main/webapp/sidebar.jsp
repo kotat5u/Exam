@@ -5,7 +5,7 @@
 <nav>
 <ul>
 <li><a href="../mainmenu/meinmenu.jsp">メニュー</a></li>
-<li><a href="StudentList.action">学生管理</a></li>
+<li><a href="../student/StudentList.action">学生管理</a></li>
 <li>成績管理</li>
 <li><a href="../testTestRegist.action">成績登録</a></li>
 <li><a href="../test/TestList.action">成績参照</a></li>
