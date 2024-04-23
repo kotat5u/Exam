@@ -1,5 +1,6 @@
 package student;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import bean.Student;
@@ -30,7 +31,17 @@ public class StudentExecuteAction extends Action{
 //			stu.setClassNum(classNum);
 //			stu.setIsAttend(isAttend == "true");
 			
-			List<Student> list=dao.filter(t.getSchool(), entYear, classNum, isAttend);
+			List<Student> list=new ArrayList<>();
+			
+			if (entYear == -1 && classNum.equals("notselect")) {
+				list=dao.filter(t.getSchool(),isAttend);
+				
+			} else if (classNum.equals("notselect")) {
+				list=dao.filter(t.getSchool(),entYear,isAttend);
+				
+			} else {
+				list=dao.filter(t.getSchool(), entYear, classNum, isAttend);
+			}
 			
 			request.setAttribute("studentlist", list);
 			

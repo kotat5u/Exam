@@ -48,7 +48,6 @@ public class StudentDAO extends DAO {
 //	検索機能で使用する作業をpostfilterとして作成
 	private List<Student> postfilter(ResultSet rSet, School school
 			) throws Exception {
-		
 		List<Student> list=new ArrayList<>();
 //		検索結果であるResultSetオブジェクトから１行ずつ取り出し、セッタを使って書き込む
 		while (rSet.next()) {
@@ -92,7 +91,7 @@ public class StudentDAO extends DAO {
 				) throws Exception {
 			
 			Connection con = getConnection();
-			
+			System.out.println("wtfilter");
 			PreparedStatement st=con.prepareStatement(
 					"select * from student where  school_cd = ? and ent_year = ? and is_attend = ?");
 			st.setString(1, school.getCd());
