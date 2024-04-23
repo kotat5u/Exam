@@ -44,6 +44,7 @@ public class StudentDAO extends DAO {
 		
 		return stu;
 	}
+
 	
 //	検索機能で使用する作業をpostfilterとして作成
 	private List<Student> postfilter(ResultSet rSet, School school
