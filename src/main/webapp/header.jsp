@@ -9,10 +9,11 @@
 		
 	</head>
 	<body>
-	<heder>
+	<header>
 	<h1>得点管理システム</h1>
-	<span>${teacher.name }様</span>
+	<span>${teacher.name }様
 	<a href="../login_logout/Logout.action">ログアウト</a>
-	</heder>	
+	</span>
+	</header>	
 	
 	

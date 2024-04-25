@@ -6,7 +6,7 @@
 	<%@include file="../sidebar.jsp" %>
 	<div id="main">
 	<h2>成績管理</h2>
-	<p>登録が完了しました。</p>
+	<p class="result">登録が完了しました。</p>
 	<a href="TestRegist.action">戻る</a>
 	<a href="TestList.action">成績参照</a>
 	</div>
