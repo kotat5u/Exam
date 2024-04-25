@@ -2,7 +2,7 @@
 
 <%@include file="../header.jsp" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<div id="wapper">
+<div id="wrapper">
 	<%@include file="../sidebar.jsp" %>
 	<div id="main">
 		<%@include file="student_list_form.jsp" %>
