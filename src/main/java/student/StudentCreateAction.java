@@ -25,3 +25,4 @@ public class StudentCreateAction extends Action{
 		return "student_create.jsp";
 	}
 }
+
