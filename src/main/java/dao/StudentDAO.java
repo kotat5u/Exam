@@ -24,18 +24,18 @@ public class StudentDAO extends DAO {
 		
 //		データベースに追加するためのStudentオブジェクトの作成
 //		リクエストパラメータから取得した値をセッタを使用して書き込む
-		
-		rs.next();
 		Student stu=new Student();
-		School sch=new School();
-		stu.setNo(rs.getString("no"));
-		stu.setName(rs.getString("name"));
-		stu.setEntYear(rs.getInt("ent_year"));
-		stu.setClassNum(rs.getString("class_num"));
-		stu.setIsAttend(rs.getBoolean("is_attend"));
-		sch.setCd(rs.getString("cd"));
-		sch.setName(rs.getString("name"));
-		stu.setSchool(sch);
+		if (rs.next()) {
+			School sch=new School();
+			stu.setNo(rs.getString("no"));
+			stu.setName(rs.getString("name"));
+			stu.setEntYear(rs.getInt("ent_year"));
+			stu.setClassNum(rs.getString("class_num"));
+			stu.setIsAttend(rs.getBoolean("is_attend"));
+			sch.setCd(rs.getString("cd"));
+			sch.setName(rs.getString("name"));
+			stu.setSchool(sch);
+		}
 			
 			
 		st.close();
@@ -151,7 +151,14 @@ public class StudentDAO extends DAO {
 		
 		boolean isSaved = true;
 		if (line.next()) {
-			isSaved = false;
+			PreparedStatement st=con.prepareStatement(
+					"update student name=?, class_num=?, is_attend=?,school_cd=?");
+			
+			st.setString(1,student.getName());
+			st.setString(2,student.getClassNum());
+			st.setString(3,(student.getSchool()).getCd());
+			st.executeUpdate();
+			st.close();
 		} else {
 			PreparedStatement st=con.prepareStatement(
 					"insert into student values(?, ?, ?, ?,true,?)");
@@ -168,23 +175,6 @@ public class StudentDAO extends DAO {
 		con.close();
 		return isSaved;
 	}
-	
-	public boolean update(Student student) throws Exception {
-		Connection con = getConnection();
-		
-			PreparedStatement st=con.prepareStatement(
-					"update student name=?, class_num=?, is_attend=?,school_cd=?");
-			
-			st.setString(1,student.getName());
-			st.setString(2,student.getClassNum());
-			st.setString(3,(student.getSchool()).getCd());
-			st.executeUpdate();
-			st.close();
-			
-		con.close();
-		
-		return ;
-	}
-	
 }
-
+	
+	
