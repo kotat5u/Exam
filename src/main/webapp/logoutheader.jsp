@@ -9,8 +9,8 @@
 		
 	</head>
 	<body>
-	<heder>
+	<header>
 	<h1>得点管理システム</h1>
-	</heder>	
+	</header>	
 	
 	

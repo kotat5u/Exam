@@ -4,7 +4,7 @@
 <div id="wrapper">
 <div id="main">
 	<h2>ログアウト</h2>
-	<p>ログアウトしました</p>
+	<p class="result">ログアウトしました</p>
 	<br>
 	<a href="login.jsp">ログイン</a>
 </div>

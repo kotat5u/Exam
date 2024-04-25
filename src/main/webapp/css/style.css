@@ -1,6 +1,110 @@
 @charset "UTF-8";
 
 
-h1 {
-	background-color: aqua;
+h2 {
+	margin: 0;
+	background-color: #E8E9E9;
+}
+
+header {
+    width: 980px;
+    height: 60px;
+    /*marginで上下に0左右にautoを指定*/
+    margin: 0 auto;
+    background-color: #E7F1FF;
+}
+
+header h1 {
+    float: left;
+    margin: 8px 20px;
+    padding: 0;
+    font-size: 32px;
+}
+
+header span {
+	float: right;
+	margin-top: 36px;
+	margin-right: 25px;
+	font-size: 12px;
+}
+
+#wrapper {
+	width: 980px;
+	margin: 20px auto;
+	overflow: hidden;
+}
+
+#main {
+	width: 720px;
+	float: right;
+	margin: 0;
+}
+
+#sidebar {
+	width: 260px;
+	float: left;
+	margin: 0;
+}
+
+footer {
+	background-color: #E8E9E9;
+	width: 980px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+footer p {
+	width: 980ps;
+	margin: 0 auto;
+	padding-top: 6px;
+	text-align: center;
+	font-size: 12px;
+}
+
+
+
+
+
+#login {
+	width: 490px;
+	margin: 0 auto;
+	border: solid 1px #000000;
+}
+
+#login h2 {
+	text-align: center;
+}
+
+#login input[type="submit"] {
+	width: 130px;
+	margin: 10px 180px;
+	padding: 8px 35px;
+	color: #FFFFFF;
+	background-color: #0D6EFD;
+	border-radius: 5px;
+	border: none;
+}
+
+#login input[type="text"] {
+	height: 30px;
+	width: 310px;
+	margin: 10px 50px;
+	padding: 10px 40px 0 40px;
+	border-radius: 2px;
+	border: solid 1px #000000;
+	background-color: #FFFFFF;
+}
+
+#login input[type="password"] {
+	height: 30px;
+	width: 310px;
+	margin: 10px 50px;
+	padding: 10px 40px 0 40px;
+	border-radius: 2px;
+	border: solid 1px #000000;
+	background-color: #FFFFFF;
+}
+
+#login input[type="checkbox"] {
+	margin-left: 180px;
 }
