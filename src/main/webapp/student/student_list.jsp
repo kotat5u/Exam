@@ -21,6 +21,7 @@
 							<th>クラス</th>
 							<th>在学中</th>
 						</tr>
+						
 						<c:forEach var="student" items="${studentlist }">
 						<tr>
 							<td>${student.entYear }</td>
@@ -28,6 +29,7 @@
 							<td>${student.name }</td>
 							<td>${student.classNum }</td>
 							<td>${student.isAttend == "True" ? "○" : "×"}</td>
+							<td><a href="StudentUpdate.action?no=${student.no }">変更</a></td>
 						</tr>
 						</c:forEach>
 					</table>

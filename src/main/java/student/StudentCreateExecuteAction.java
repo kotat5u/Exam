@@ -1,9 +1,11 @@
 package student;
 
 import bean.Student;
+import bean.Teacher;
 import dao.StudentDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import tool.Action;
 
 public class StudentCreateExecuteAction extends Action{
@@ -11,19 +13,32 @@ public class StudentCreateExecuteAction extends Action{
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 		
-		Integer entYear=Integer.parseInt(request.getParameter("entYear"));
+		HttpSession session=request.getSession();
+		Teacher t=new Teacher();
+		t=(Teacher)session.getAttribute("teacher");
+
+		
+		int entYear=Integer.parseInt(request.getParameter("ent_year"));
 		String no=request.getParameter("no");
 		String name=request.getParameter("name");
-		String classNum=request.getParameter("classNum");
+		String classNum=request.getParameter("class_num");
 		
 		Student stu=new Student();
 		stu.setEntYear(entYear);
 		stu.setNo(no);
 		stu.setName(name);
 		stu.setClassNum(classNum);
-		StudentDAO dao=new StudentDAO();
-		dao.save(stu);
+		stu.setSchool(t.getSchool());
 		
-		return "list.jsp";
+		StudentDAO dao=new StudentDAO();
+		boolean isSaved=dao.save(stu);
+		
+		if (isSaved) {
+			return "student_create_done.jsp";
+		}else {
+			request.setAttribute("PKerrorDAO", -1);
+			return "student_create.jsp";
+		}
+		
 	}	
 }

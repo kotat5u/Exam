@@ -81,7 +81,6 @@ public class StudentDAO extends DAO {
 		List<Student> list=postfilter(rs,school);
 		st.close();
 		con.close();
-//		postfilterを呼び出す
 		return list;
 		
 	}
@@ -102,7 +101,6 @@ public class StudentDAO extends DAO {
 			List<Student> list=postfilter(rs,school);
 			st.close();
 			con.close();
-//			postfilterを呼び出す
 			return list;
 			
 	}
@@ -121,7 +119,6 @@ public class StudentDAO extends DAO {
 			List<Student> list=postfilter(rs,school);
 			st.close();
 			con.close();
-//			postfilterを呼び出す
 			return list;
 			
 	}
@@ -139,7 +136,6 @@ public class StudentDAO extends DAO {
 			List<Student> list=postfilter(rs,school);
 			st.close();
 			con.close();
-//			postfilterを呼び出す
 			return list;
 			
 	}
@@ -148,20 +144,48 @@ public class StudentDAO extends DAO {
 	public boolean save(Student student) throws Exception {
 		Connection con = getConnection();
 		
-		PreparedStatement st=con.prepareStatement(
-				"insert into student values(?, ?, ?, ?,true,?)");
+		PreparedStatement check=con.prepareStatement(
+				"select * from student where no = ?");
+		check.setString(1,student.getNo());
+		ResultSet line=check.executeQuery();
 		
-		st.setInt(1,student.getEntYear());
-		st.setString(2,student.getNo());
-		st.setString(3,student.getName());
-		st.setString(4,student.getClassNum());
-		st.setString(5,(student.getSchool()).getCd());
-		int line=st.executeUpdate();
-		
-		st.close();
+		boolean isSaved = true;
+		if (line.next()) {
+			isSaved = false;
+		} else {
+			PreparedStatement st=con.prepareStatement(
+					"insert into student values(?, ?, ?, ?,true,?)");
+			
+			st.setString(1,student.getNo());
+			st.setString(2,student.getName());
+			st.setInt(3,student.getEntYear());
+			st.setString(4,student.getClassNum());
+			st.setString(5,(student.getSchool()).getCd());
+			st.executeUpdate();
+			st.close();
+		}
+		check.close();
 		con.close();
-		return line > 0;
+		return isSaved;
 	}
+	
+	public boolean update(Student student) throws Exception {
+		Connection con = getConnection();
+		
+			PreparedStatement st=con.prepareStatement(
+					"update student name=?, class_num=?, is_attend=?,school_cd=?");
+			
+			st.setString(1,student.getName());
+			st.setString(2,student.getClassNum());
+			st.setString(3,(student.getSchool()).getCd());
+			st.executeUpdate();
+			st.close();
+			
+		con.close();
+		
+		return ;
+	}
+
 	
 }
 

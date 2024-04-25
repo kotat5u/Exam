@@ -2,7 +2,7 @@
 
 	<div>
 		<h2>学生管理</h2>
-		<a href="#">新規登録</a>
+		<a href="student_create.jsp">新規登録</a>
 		<form action="StudentExecute.action">
 
 		<label for="f1">入学年度</label>
