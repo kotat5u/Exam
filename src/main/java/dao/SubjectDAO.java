@@ -60,7 +60,32 @@ public class SubjectDAO extends DAO {
 	
 	
 
-public void insert(Subject Subject) throws Exception {
+public boolean save(Subject Subject) throws Exception {
+	Connection con=getConnection();
+
+	PreparedStatement st=con.prepareStatement(
+		"insert into subject values(?, ?, ?)");
+	st.setString(1, Subject.getSchool().getCd());
+	st.setString(2, Subject.getCd());
+	st.setString(3, Subject.getName());
+	
+	
+	st.executeUpdate();
+
+
+	st.close();
+	con.close();
+	
+	return true;
+}
+
+
+public List<Subject> save(String subject) {
+	// TODO 自動生成されたメソッド・スタブ
+	return null;
+}
+
+public void delete(Subject Subject) throws Exception {
 	Connection con=getConnection();
 
 	PreparedStatement st=con.prepareStatement(
@@ -75,18 +100,17 @@ public void insert(Subject Subject) throws Exception {
 	st.close();
 	con.close();
 	
+
+
+
+
+
 }
 
 
-
-
-public List<Subject> filter(String subject) {
+public List<Subject> delete(String subject) {
 	// TODO 自動生成されたメソッド・スタブ
 	return null;
 }
-
-
-
-
 
 }
