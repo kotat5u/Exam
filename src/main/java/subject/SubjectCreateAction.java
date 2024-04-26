@@ -1,33 +1,30 @@
 package subject;
 
+import java.util.List;
 
 import bean.Subject;
-import bean.Teacher;
 import dao.SubjectDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import tool.Action;
 
-
-public class SubjectDeleteAction extends Action {
+public class SubjectCreateAction extends Action {
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
 		HttpSession session=request.getSession();
-		
-		Teacher t = (Teacher)session.getAttribute("teacher");
 
-		String cd=request.getParameter("cd");
+		String Subject=request.getParameter("School");
+		if (Subject==null) Subject="";
 
 		SubjectDAO dao=new SubjectDAO();
-		Subject list=dao.get(cd, t.getSchool());
-
-		session.setAttribute("deletesubject", list);
+		List<Subject> list=dao.save(Subject);
 		
-		return "../subject/subject_delete.jsp";
+
+		session.setAttribute("list", list);
+		
+		return "../subject/subject_create.jsp";
 	}
 }
-
-
