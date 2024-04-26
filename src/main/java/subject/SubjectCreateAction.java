@@ -1,8 +1,5 @@
 package subject;
 
-import java.util.List;
-
-import bean.Subject;
 import dao.SubjectDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,12 +12,14 @@ public class SubjectCreateAction extends Action {
 	) throws Exception {
 
 		HttpSession session=request.getSession();
+		
 
-		String Subject=request.getParameter("School");
-		if (Subject==null) Subject="";
+
+		String subject=(String) request.getSession();
 
 		SubjectDAO dao=new SubjectDAO();
-		List<Subject> list=dao.save(Subject);
+		boolean list=dao.save(subject);
+		
 		
 
 		session.setAttribute("list", list);
