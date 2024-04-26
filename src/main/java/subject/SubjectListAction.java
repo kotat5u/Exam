@@ -30,3 +30,4 @@ public class SubjectListAction extends Action {
 		return "../subject/subject_list.jsp";
 	}
 }
+

@@ -8,3 +8,4 @@
 	<a href="SubjectList.action">科目一覧</a>
 	</heder>
 <%@include file="../footer.jsp" %>
+

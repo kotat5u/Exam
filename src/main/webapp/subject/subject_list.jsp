@@ -26,17 +26,3 @@
 
 	<%@include file="../footer.jsp" %>
 		
-	
-<%---
-ヘッダー―
-タグリブ
-
-<div id="wrapper">
-再いどばー
-<div id"main">
-混ってんつ
-</div>
-</div>
-
- --%>	
-

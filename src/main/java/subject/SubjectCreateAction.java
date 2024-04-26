@@ -27,3 +27,4 @@ public class SubjectCreateAction extends Action {
 		return "../subject/subject_create.jsp";
 	}
 }
+
