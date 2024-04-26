@@ -23,7 +23,6 @@ public class StudentExecuteAction extends Action{
 			Integer entYear=Integer.parseInt(request.getParameter("f1"));
 			String classNum=request.getParameter("f2");
 			boolean isAttend=request.getParameter("f3") != null;
-			
 						
 			StudentDAO dao=new StudentDAO();
 //			Student stu=new Student();
@@ -38,12 +37,18 @@ public class StudentExecuteAction extends Action{
 				
 			} else if (classNum.equals("notselect")) {
 				list=dao.filter(t.getSchool(),entYear,isAttend);
+				request.setAttribute("choiceYear", entYear);
 				
 			} else {
 				list=dao.filter(t.getSchool(), entYear, classNum, isAttend);
+				request.setAttribute("choiceYear", entYear);
+				request.setAttribute("choiceClass", classNum);
 			}
 			
 			request.setAttribute("studentlist", list);
+			
+			
+			request.setAttribute("choiceAttend", isAttend);
 			
 			return "student_list.jsp";
 			
