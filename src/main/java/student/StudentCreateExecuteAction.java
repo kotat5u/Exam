@@ -34,7 +34,7 @@ public class StudentCreateExecuteAction extends Action{
 		
 		
 		if (dao.get(no).getNo() == null) {
-			boolean isSaved=dao.save(stu);
+			dao.save(stu);
 			return "student_create_done.jsp";
 		}else {
 			request.setAttribute("PKerrorDAO", -1);

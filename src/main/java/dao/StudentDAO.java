@@ -143,7 +143,6 @@ public class StudentDAO extends DAO {
 //	保存機能の作成
 	public boolean save(Student student) throws Exception {
 		Connection con = getConnection();
-		
 		PreparedStatement check=con.prepareStatement(
 				"select * from student where no = ?");
 		check.setString(1,student.getNo());
@@ -152,11 +151,13 @@ public class StudentDAO extends DAO {
 		boolean isSaved = true;
 		if (line.next()) {
 			PreparedStatement st=con.prepareStatement(
-					"update student name=?, class_num=?, is_attend=?,school_cd=?");
+					"update student set name=?, class_num=?, is_attend=?, school_cd=? where no = ?");
 			
 			st.setString(1,student.getName());
 			st.setString(2,student.getClassNum());
-			st.setString(3,(student.getSchool()).getCd());
+			st.setBoolean(3,student.getIsAttend());
+			st.setString(4,(student.getSchool()).getCd());
+			st.setString(5,student.getNo());
 			st.executeUpdate();
 			st.close();
 		} else {
