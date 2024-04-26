@@ -40,7 +40,20 @@ header span {
 	margin: 0;
 }
 
+#mainmenu {
+	width: 460px;
+	float: left;
+	margin: 0;
+}
+
+#tounaispecial {
+	width: 260px;
+	float: left;
+	margin: 0;
+}
+
 #sidebar {
+	height: 360px;
 	width: 260px;
 	float: left;
 	margin: 0;
@@ -107,4 +120,34 @@ footer p {
 
 #login input[type="checkbox"] {
 	margin-left: 180px;
+}
+
+#mainmenu section {
+	height: 100px;
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+.menu {
+	height: 100px;
+	width: 120px;
+	margin-left: 25px;
+	float:left;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center
+}
+
+
+
+
+.red {
+	background-color: #DDBBBB;
+}
+.green {
+	background-color: #BBDDBB;	
+}
+.blue {
+	background-color: #BBBBDD;
 }
