@@ -10,6 +10,7 @@
 			
 		<label for="ent_year">入学年度</label>
 		<select name="ent_year" id="ent_year">
+			<option value="-1" selected>--------</option>
 			<c:forEach var="year" begin="2020" end="2030">
 				<option value=${year }>${year }</option>
 			</c:forEach>
@@ -39,4 +40,5 @@
 		</form>
 	</div>
 </div>
+
 <%@include file="../footer.jsp" %>
