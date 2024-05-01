@@ -1,13 +1,14 @@
 package subject;
 
-import java.util.List;
 
 import bean.Subject;
+import bean.Teacher;
 import dao.SubjectDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import tool.Action;
+
 
 public class SubjectDeleteAction extends Action {
 	public String execute(
@@ -16,16 +17,19 @@ public class SubjectDeleteAction extends Action {
 
 		HttpSession session=request.getSession();
 		
-		session.removeAttribute("list");
+		Teacher t = (Teacher)session.getAttribute("teacher");
 
-		String Subject=request.getParameter("School");
-		if (Subject==null) Subject="";
+		String cd=request.getParameter("cd");
 
 		SubjectDAO dao=new SubjectDAO();
-		List<Subject> list=dao.filter(Subject);
+		Subject list=dao.get(cd, t.getSchool());
 
-		session.setAttribute("list", list);
-
-		return "../subject/subject_delate.jsp";
+		session.setAttribute("deletesubject", list);
+		
+		return "../subject/subject_delete.jsp";
 	}
 }
+
+
+
+
