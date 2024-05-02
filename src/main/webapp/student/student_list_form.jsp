@@ -9,6 +9,7 @@
 		<select name="f1" id="f1">
 		<c:choose>
 			<c:when test="${empty choiceYear }"><option value="-1" selected>--------</option></c:when>
+			<c:when test="${choiceYear == -1 }"><option value="-1" selected>--------</option></c:when> 
 			<c:otherwise><option value="${choiceYear }" selected hidden>${choiceYear }</option>
 			<option value="-1">--------</option></c:otherwise>
 		</c:choose>

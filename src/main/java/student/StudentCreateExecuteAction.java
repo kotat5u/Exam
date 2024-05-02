@@ -33,9 +33,15 @@ public class StudentCreateExecuteAction extends Action{
 		StudentDAO dao=new StudentDAO();
 		
 		
-		if (dao.get(no).getNo() == null) {
+		if (entYear == -1){
+			request.setAttribute("EDOKKOerror", -1);
+			request.setAttribute("studentinfo",stu);
+			return "student_create.jsp";
+			
+		}else if (dao.get(no).getNo() == null) {
 			dao.save(stu);
 			return "student_create_done.jsp";
+		
 		}else {
 			request.setAttribute("PKerrorDAO", -1);
 			return "student_create.jsp";

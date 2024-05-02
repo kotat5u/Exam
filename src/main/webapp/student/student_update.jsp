@@ -42,6 +42,7 @@
 		<br>
 		<input type="submit" id="submit_botton" value="変更">
 		<br>
+		<a href="../student/StudentList.action">戻る</a>
 		</form>
 	</div>
 </div>
