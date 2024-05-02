@@ -1,5 +1,6 @@
 package subject;
 
+import bean.Subject;
 import dao.SubjectDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,7 +16,7 @@ public class SubjectCreateAction extends Action {
 		
 
 
-		String subject=(String) request.getSession();
+		Subject subject=(Subject) request.getSession();
 
 		SubjectDAO dao=new SubjectDAO();
 		boolean list=dao.save(subject);
