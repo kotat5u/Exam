@@ -60,14 +60,14 @@ public class SubjectDAO extends DAO {
 	
 	
 
-public boolean save(String subject) throws Exception {
+public boolean save(Subject subject) throws Exception {
 	Connection con=getConnection();
 
 	PreparedStatement st=con.prepareStatement(
 		"insert into subject values(?, ?, ?)");
 	st.setSchool(1,subject.getSchool()).getCd();
-	st.setString(2,subject.getCd("cd"));
-	st.setString(3,subject.GetName("name"));
+	st.setString(2,subject.getCd());
+	st.setString(3,subject.GetName(""));
 	
 	st.executeUpdate();
 
