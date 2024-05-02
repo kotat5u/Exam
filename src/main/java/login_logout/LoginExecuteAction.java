@@ -22,6 +22,7 @@ public class LoginExecuteAction extends Action{
 //		tがnull(=ログインに失敗した)ならlogin.jspに処理を戻す
 		if (t.getSchool() == null) {
 			request.setAttribute("loginError", -1);
+			request.setAttribute("teacherID", id);
 			return "login.jsp";
 		}
 		

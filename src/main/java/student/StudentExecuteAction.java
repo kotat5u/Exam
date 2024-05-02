@@ -32,7 +32,10 @@ public class StudentExecuteAction extends Action{
 			
 			List<Student> list=new ArrayList<>();
 			
-			if (entYear == -1 && classNum.equals("notselect")) {
+			if (entYear == -1 && !classNum.equals("notselect")) {
+				request.setAttribute("SELECTerror", -1);
+				
+			} else if (entYear == -1 && classNum.equals("notselect")) {
 				list=dao.filter(t.getSchool(),isAttend);
 				
 			} else if (classNum.equals("notselect")) {
