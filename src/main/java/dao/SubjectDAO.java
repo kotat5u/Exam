@@ -21,12 +21,12 @@ public class SubjectDAO extends DAO {
 		st.setString(2, cd);
 		ResultSet rs=st.executeQuery();
 		
-		rs.next();
 		Subject s = new Subject();
-		s.setSchool(school);
-		s.setCd(cd);
-		s.setName(rs.getString("name"));
-			
+		if (rs.next()) {
+			s.setSchool(school);
+			s.setCd(cd);
+			s.setName(rs.getString("name"));
+		}
 		st.close();
 		con.close();
 			
@@ -60,13 +60,33 @@ public class SubjectDAO extends DAO {
 	
 	
 
-public void insert(Subject Subject) throws Exception {
+public boolean save(String subject) throws Exception {
 	Connection con=getConnection();
 
 	PreparedStatement st=con.prepareStatement(
-		"insert into product values(null, ?, ?)");
-	st.setString(1, Subject.getName());
-	st.setString(2, Subject.getCd());
+		"insert into subject values(?, ?, ?)");
+	st.setSchool(1,subject.getSchool()).getCd();
+	st.setString(2,subject.getCd("cd"));
+	st.setString(3,subject.GetName("name"));
+	
+	st.executeUpdate();
+
+
+	st.close();
+	con.close();
+	
+	return true;
+}
+
+
+
+
+public boolean delete(String cd) throws Exception {
+	Connection con=getConnection();
+
+	PreparedStatement st=con.prepareStatement(
+		"delete from subject where cd = ?");
+	st.setString(1, cd);
 	
 	
 	st.executeUpdate();
@@ -75,15 +95,14 @@ public void insert(Subject Subject) throws Exception {
 	st.close();
 	con.close();
 	
+	return true;
+
+ 
 }
 
 
 
 
-public List<Subject> filter(String subject) {
-	// TODO 自動生成されたメソッド・スタブ
-	return null;
-}
 
 
 
