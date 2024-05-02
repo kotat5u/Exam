@@ -62,18 +62,31 @@ public class SubjectDAO extends DAO {
 
 public boolean save(Subject subject) throws Exception {
 	Connection con=getConnection();
-
-	PreparedStatement st=con.prepareStatement(
-		"insert into subject values(?, ?, ?)");
-	st.setSchool(1,subject.getSchool()).getCd();
-	st.setString(2,subject.getCd());
-	st.setString(3,subject.GetName(""));
 	
-	st.executeUpdate();
+	if (get(subject.getCd(), subject.getSchool()).getCd() == null) { 
+	
+		PreparedStatement st=con.prepareStatement(
+				"insert into subject values(?, ?, ?)");
+		st.setString(1,subject.getSchool().getCd());
+		st.setString(2,subject.getCd());
+		st.setString(3,subject.getName());
+	
+		st.executeUpdate();
 
+		st.close();
+		con.close();
+	}else {
+		PreparedStatement st=con.prepareStatement(
+				"update subject set name = ? where cd = ? and shool_cd = ?");
+		st.setString(1,subject.getName());
+		st.setString(2,subject.getCd());
+		st.setString(3,subject.getSchool().getCd());
+	
+		st.executeUpdate();
 
-	st.close();
-	con.close();
+		st.close();
+		con.close();
+	}
 	
 	return true;
 }
