@@ -9,7 +9,7 @@
 		<form action="StudentUpdateExecute.action">
 		
 		<c:if test="${ErrorYAO == -1 }">
-		再入力してクレメンス～
+		<p class="error">再入力してクレメンス～</p>
 		<br>
 		</c:if>
 		<label for="ent_year">入学年度</label>
