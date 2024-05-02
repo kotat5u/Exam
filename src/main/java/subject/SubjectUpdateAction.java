@@ -27,3 +27,4 @@ public class SubjectUpdateAction extends Action {
 		return "../subject/subject_update.jsp";
 	}
 }
+
