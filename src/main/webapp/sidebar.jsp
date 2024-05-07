@@ -4,7 +4,7 @@
 <div id="sidebar">
 <nav>
 <ul>
-<li><a href="../mainmenu/menu.Action">メニュー</a></li>
+<li><a href="../mainmenu/Menu.action">メニュー</a></li>
 <li><a href="../student/StudentList.action">学生管理</a></li>
 <li>成績管理<ul>
 <li><a href="../test/TestRegist.action">成績登録</a></li>
