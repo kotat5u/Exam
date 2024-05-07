@@ -9,7 +9,7 @@
 	<%@include file="test_list_form.jsp" %>
 	<div>
 	科目:${choiceSubject.name }
-	<table>
+	<table class="sql">
 		<tr>
 			<th>入学年度</th>
 			<th>クラス</th>

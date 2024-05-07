@@ -10,7 +10,7 @@
 	<%@include file="test_list_form.jsp" %>
 	<div>
 	氏名:${choiceStudent.name }(${choiceStudent.no })
-	<table>
+	<table class="sql">
 		<tr>
 			<th>科目名</th>
 			<th>科目コード</th>

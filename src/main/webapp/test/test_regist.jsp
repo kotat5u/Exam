@@ -10,9 +10,9 @@
 	<%@include file="test_regist_form.jsp" %>
 	<c:if test="${empty first }">
 	<div>
-		<h2>科目:${choiceSubject.name }(${choiceNum }回)</h2>
+		<h2>科目:${TRchoiceSubject.name }(${TRchoiceNum }回)</h2>
 		<form action="TestRegistExecute.action">
-		<table>
+		<table class="sql">
 		<tr>
 			<th>入学年度</th>
 			<th>クラス</th>
@@ -27,9 +27,12 @@
 			<td>${test.student.no }</td>
 			<td>${test.student.name }</td>
 			<td>
+			<c:if test="${test.point < 0 || 100 < test.point }">
+				<p class="error">0～100の範囲で入力してください</p>
+			</c:if>
 			<c:choose>
-				<c:when test="${empty test.point }"><input type="number" name="${test.student.no }" min="0" max="100"></c:when>
-				<c:otherwise><input type="number" name="${test.student.no }" value="${test.point}" min="0" max="100"></c:otherwise>
+				<c:when test="${empty test.point }"><input type="number" name="${test.student.no }"></c:when>
+				<c:otherwise><input type="number" name="${test.student.no }" value="${test.point}"></c:otherwise>
 			</c:choose>
 			</td>
 		</tr>

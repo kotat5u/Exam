@@ -1,7 +1,7 @@
 <%-- 成績一覧のフォーム部分 --%>
 
 <%@ page pageEncoding="UTF-8" %>
-
+<div class="form">
 	<div>
 		科目情報
 		<table>
@@ -60,3 +60,4 @@
 			<input type="submit" value="検索">
 		</form>
 	</div>
+</div>

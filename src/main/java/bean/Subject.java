@@ -1,9 +1,9 @@
 package bean;
 
 public class Subject implements java.io.Serializable{
-	String cd;
-	String name;
-	School school;
+	private String cd;
+	private String name;
+	private School school;
 	
 	public String getCd() {
 		return cd;

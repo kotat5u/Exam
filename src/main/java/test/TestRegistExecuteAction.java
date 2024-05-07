@@ -15,15 +15,18 @@ public class TestRegistExecuteAction extends Action{
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session=request.getSession();
 		List<Test> list=(List<Test>)session.getAttribute("testRegistList");
-		int num=(int)session.getAttribute("choiceNum");
-		
+		int num=(int)session.getAttribute("TRchoiceNum");
+	
 		for (Test test : list) {
 			test.setNo(num);
 			test.setPoint(Integer.parseInt(request.getParameter(test.getStudent().getNo())));
+			if (test.getPoint() < 0 || 100 < test.getPoint()) {
+				return "test_regist.jsp";
+			}
 		}
 		
 		TestDAO dao=new TestDAO();
-		boolean notSave = dao.save(list);
+		dao.save(list);
 		
 		return "test_regist_done.jsp";
 	}

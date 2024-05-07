@@ -28,7 +28,9 @@
 	<section id="tounai">
 	</section>
 	<section id="katoh">
-	<a href="https://godfield.net/"><img src="../images/godfield1.png" alt="GODFIELD"></a>
+	<a href="https://godfield.net/">
+	<img src="../images/.jpeg" alt="GODFIELD"><br>
+	<p></p></a>
 	</section>
 	</div>
 </div>

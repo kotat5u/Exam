@@ -25,7 +25,11 @@ public class TestRegistAction extends Action{
 		SubjectDAO subjectdao=new SubjectDAO();
 		
 		if (request.getParameter("f1") == null) {
-			
+			session.removeAttribute("testRegistList");
+			session.removeAttribute("TRchoiceYear");
+			session.removeAttribute("TRchoiceClass");
+			session.removeAttribute("TRchoiceSubject");
+			session.removeAttribute("TRchoiceNum");
 //			ユーザー(先生)の所属する学校をもとにクラス一覧と科目一覧を取得
 			ClassNumDAO classdao=new ClassNumDAO();
 			List<String> classlist=classdao.filter(school);
@@ -56,10 +60,10 @@ public class TestRegistAction extends Action{
 			List<Test> list=testdao.filter(entYear, classNum, subject, num, school);
 			
 			session.setAttribute("testRegistList", list);
-			request.setAttribute("choiceYear", entYear);
-			request.setAttribute("choiceClass", classNum);
-			request.setAttribute("choiceSubject", subject);
-			session.setAttribute("choiceNum", num);
+			session.setAttribute("TRchoiceYear", entYear);
+			session.setAttribute("TRchoiceClass", classNum);
+			session.setAttribute("TRchoiceSubject", subject);
+			session.setAttribute("TRchoiceNum", num);
 		}
 		return "test_regist.jsp";
 	}

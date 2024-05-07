@@ -136,7 +136,8 @@ footer p {
 	text-align: center;
 	display: flex;
 	align-items: center;
-	justify-content: center
+	justify-content: center;
+	border-radius: 5px;
 }
 
 
@@ -150,4 +151,32 @@ footer p {
 }
 .blue {
 	background-color: #BBBBDD;
+}
+
+
+.form{
+	border: solid 1px#777777;
+	border-radius: 10px;
+}
+
+
+.sql {
+	width: 640px;
+	border-spacing: 0
+}
+
+.sql th {
+	text-align: left;
+	border-bottom: solid 1px #000000;
+	padding-right: 10px;
+}
+.sql td {
+	border-bottom: solid 1px #000000;
+	padding-right: 10px;
+}
+
+
+.error {
+	color: #FFD270;
+	margin: 0;
 }
