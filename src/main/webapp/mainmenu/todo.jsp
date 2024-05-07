@@ -6,30 +6,19 @@
 	<%-- サイドバー読み込み --%>
 	<%@include file="../sidebar.jsp" %>
 	<div id="mainmenu">
-	<h2>メニュー</h2>
-	<section>
-	<div class="red menu">
-		<a href="../student/StudentList.action">学生管理</a>
+	<h2>今後の課題</h2>
+	<ul>
+	<li>AWS</li>
+	<li>cssの作成およびjspの調整</li>
+	<li>メインメニューに蛇足をつける</li>
+	<li>テストを進める、バグを直す</li>
+	</ul>
 	</div>
-	<div class="green menu">
-		<div>
-		成績管理<br>
-		<a href="../test/TestRegist.action">成績登録</a><br>
-		<a href="../test/TestList.action">成績参照</a>
-		</div>
-	</div>
-	<div class="blue menu">
-		<a href="../subject/SubjectList.action">科目管理</a>
-	</div>
-	</section>
-	</div>
-	
 	<div id="special">
 	<section id="tounai">
 	</section>
 	<section id="katoh">
-	<%--<a href="https://godfield.net/">--%>
-	<a href="../mainmenu/todo.jsp">
+	<a href="https://godfield.net/">
 	<img src="../images/godfield.png" alt="GODFIELD" width="200"><br>
 	<p></p></a>
 	</section>

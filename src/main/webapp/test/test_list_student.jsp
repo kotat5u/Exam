@@ -10,6 +10,11 @@
 	<%@include file="test_list_form.jsp" %>
 	<div>
 	氏名:${choiceStudent.name }(${choiceStudent.no })
+	<c:choose>
+	<c:when test="${empty testListStudent }">
+	学生情報が存在しませんでした。
+	</c:when>
+	<c:otherwise>
 	<table class="sql">
 		<tr>
 			<th>科目名</th>
@@ -26,6 +31,8 @@
 		</tr>
 		</c:forEach>
 	</table>
+	</c:otherwise>
+	</c:choose>
 	</div>
 	</div>
 </div>

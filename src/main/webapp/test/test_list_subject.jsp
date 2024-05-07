@@ -8,6 +8,11 @@
 	<h2>成績管理</h2>
 	<%@include file="test_list_form.jsp" %>
 	<div>
+	<c:choose>
+	<c:when test="${empty testListSubject }">
+	学生情報が存在しませんでした。
+	</c:when>
+	<c:otherwise>
 	科目:${choiceSubject.name }
 	<table class="sql">
 		<tr>
@@ -29,6 +34,8 @@
 		</tr>
 		</c:forEach>
 	</table>
+	</c:otherwise>
+	</c:choose>
 	</div>
 	</div>
 </div>
