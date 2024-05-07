@@ -9,21 +9,17 @@
 	<c:when test="${loginError == -1 }">
 	ログインに失敗しました。IDまたはパスワードが正しくありません。<%-- ログインエラーの値が-1の時のみ表示 --%>
 	<form action="LoginExecute.action">
-	<input type="text" name="id" value="${teacherID }" placeholder="半角でご入力ください" maxlength="20" pattern="^[a-zA-Z0-9]+$" required><br><%-- required : 必須項目 --%>
-	<input type="password" name="password" placeholder="20文字以内の半角英数字でご入力ください" maxlength="20" pattern="^[a-zA-Z0-9]+$" required id="password"><br>
-	<input type="checkbox" name="check_d_ps" id="showPassword" onchange="togglePasswordVisibility()"><label for="check_d_ps">パスワードを表示</label><br>
-	<input type="submit" value="ログイン"><br>
-	</form>
+	<input type="text" name="d" value="${teacherID }" placeholder="半角でご入力ください" maxlength="20" pattern="^[a-zA-Z0-9]+$" required><br><%-- required : 必須項目 --%>
 	</c:when>
 	<c:otherwise>
 	<form action="LoginExecute.action">
 	<input type="text" name="id" placeholder="半角でご入力ください" maxlength="20" pattern="^[a-zA-Z0-9]+$" required><br><%-- required : 必須項目 --%>
+	</c:otherwise>
+	</c:choose>
 	<input type="password" name="password" placeholder="20文字以内の半角英数字でご入力ください" maxlength="20" pattern="^[a-zA-Z0-9]+$" required id="password"><br>
 	<input type="checkbox" name="check_d_ps" id="showPassword" onchange="togglePasswordVisibility()"><label for="check_d_ps">パスワードを表示</label><br>
 	<input type="submit" value="ログイン"><br>
 	</form>
-	</c:otherwise>
-	</c:choose>
 </div>
 </div>
 <script>
