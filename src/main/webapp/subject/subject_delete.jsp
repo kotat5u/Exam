@@ -15,7 +15,7 @@
 </form>
 <a href="subject_list.jsp">戻る</a>
 <body>
-	<%@include file="../footer.jsp"%>
 </heder>
+	<%@include file="../footer.jsp"%>
 <%@page contentType="text/html; charset=UTF-8"%>
 

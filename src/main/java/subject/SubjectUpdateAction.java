@@ -15,16 +15,16 @@ public class SubjectUpdateAction extends Action {
 
 		HttpSession session=request.getSession();
 		
-		Teacher t = (Teacher)session.getAttribute("teacher");
+		Teacher t=new Teacher(); t = (Teacher)session.getAttribute("teacher");
 
-		String id=request.getParameter("cd");
+		String cd=request.getParameter("cd");
 
 		SubjectDAO dao=new SubjectDAO();
-		Subject list=dao.get(id, t.getSchool());
+		Subject list=dao.get(cd, t.getSchool());
+					
 
-		session.setAttribute("Updatesubject", list);
+		session.setAttribute("updatesubject", list);
 		
 		return "../subject/subject_update.jsp";
 	}
 }
-

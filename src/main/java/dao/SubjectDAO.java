@@ -77,7 +77,7 @@ public boolean save(Subject subject) throws Exception {
 		con.close();
 	}else {
 		PreparedStatement st=con.prepareStatement(
-				"update subject set name = ? where cd = ? and shool_cd = ?");
+				"update subject set name = ? where cd = ? and school_cd = ?");
 		st.setString(1,subject.getName());
 		st.setString(2,subject.getCd());
 		st.setString(3,subject.getSchool().getCd());
