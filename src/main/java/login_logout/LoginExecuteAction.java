@@ -44,6 +44,7 @@ public class LoginExecuteAction extends Action{
 			default:
 				time=4;
 		}
+		
         request.setAttribute("now", time);
 
 //		ユーザー(先生)の情報をセッションに格納
