@@ -9,7 +9,7 @@
 	<c:when test="${loginError == -1 }">
 	ログインに失敗しました。IDまたはパスワードが正しくありません。<%-- ログインエラーの値が-1の時のみ表示 --%>
 	<form action="LoginExecute.action">
-	<input type="text" name="d" value="${teacherID }" placeholder="半角でご入力ください" maxlength="20" pattern="^[a-zA-Z0-9]+$" required><br><%-- required : 必須項目 --%>
+	<input type="text" name="id" value="${teacherID }" placeholder="半角でご入力ください" maxlength="20" pattern="^[a-zA-Z0-9]+$" required><br><%-- required : 必須項目 --%>
 	</c:when>
 	<c:otherwise>
 	<form action="LoginExecute.action">
