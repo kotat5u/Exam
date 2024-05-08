@@ -2,6 +2,7 @@
 
 <%-- ヘッダー読み込み --%>
 <%@include file="../header.jsp" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="wrapper">
 	<%-- サイドバー読み込み --%>
 	<%@include file="../sidebar.jsp" %>
@@ -26,6 +27,26 @@
 	
 	<div id="special">
 	<section id="tounai">
+	<c:choose>
+			<c:when test="${now == 1 }">
+				<p>おはようございます！<br>
+				今日も一日頑張りましょう！</p>
+			</c:when>
+			<c:when test="${now == 2 }">
+				<p>こんにちは！<br>
+				もうお昼ですね。<br>
+				そろそろ休憩しましょう！</p>
+			</c:when>
+			<c:when test="${now == 3 }">
+				<p>こんにちは！<br>
+				午後も頑張りましょう！</p>
+			</c:when>
+			<c:otherwise>
+				<p>こんばんは！<br>
+				今日も一日お疲れさまです！<br>
+				あまり夜更かししないでくださいね！</p>
+			</c:otherwise>
+		</c:choose>
 	</section>
 	<section id="katoh">
 	<a href="https://godfield.net/">
