@@ -1,5 +1,7 @@
 package login_logout;
 
+import java.time.LocalTime;
+
 import bean.Teacher;
 import dao.TeacherDAO;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,7 +27,24 @@ public class LoginExecuteAction extends Action{
 			request.setAttribute("teacherID", id);
 			return "login.jsp";
 		}
-		
+//		時間判定
+		String now=LocalTime.now().toString();
+		now = (now.substring(0, now.indexOf(":")));
+		int time;
+		switch (now) {
+			case "4", "5",  "6", "7", "8", "9", "10":
+				time=1;
+				break;
+			case "11", "12", "13":
+				time=2;
+				break;
+			case "14", "15", "16", "17", "18":
+				time=3;
+				break;
+			default:
+				time=4;
+		}
+        request.setAttribute("now", time);
 
 //		ユーザー(先生)の情報をセッションに格納
 		session.setAttribute("teacher", t);
