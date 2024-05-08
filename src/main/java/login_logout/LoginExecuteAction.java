@@ -5,6 +5,7 @@ import dao.TeacherDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import mainmenu.MenuAction;
 import tool.Action;
 
 public class LoginExecuteAction extends Action{
@@ -25,7 +26,8 @@ public class LoginExecuteAction extends Action{
 			request.setAttribute("teacherID", id);
 			return "login.jsp";
 		}
-		
+		MenuAction menu = new MenuAction();
+		menu.execute(request, response);
 
 //		ユーザー(先生)の情報をセッションに格納
 		session.setAttribute("teacher", t);
