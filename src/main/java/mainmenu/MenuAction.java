@@ -12,18 +12,28 @@ public class MenuAction extends Action{
 //		時間判定
 		String now=LocalTime.now().toString();
 		now = (now.substring(0, now.indexOf(":")));
+		int time;
 		switch (now) {
-			case "6", "7", "8", "9", "10", "11":
-				now="mornig";
+			case "4", "5",  "6", "7", "8", "9", "10":
+				time=1;
 				break;
-			case "12", "13", "14", "15", "16", "17":
-				now="afternoon";
+			case "11", "12", "13":
+				time=2;
+				break;
+			case "14", "15", "16", "17", "18":
+				time=3;
 				break;
 			default:
-				now="night";
+				time=4;
 		}
-        request.setAttribute("now", now);
+        request.setAttribute("now", time);
 		
 		return "mainmenu.jsp";
 	}
 }
+
+​​
+//朝　　　４時～１０時
+//昼　　１１時～１３時
+//夕方　１４時～１８時
+//夜　　１９時～３時

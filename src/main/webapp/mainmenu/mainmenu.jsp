@@ -28,8 +28,7 @@
 	<section id="tounai">
 	</section>
 	<section id="katoh">
-	<%--<a href="https://godfield.net/">--%>
-	<a href="../mainmenu/todo.jsp">
+	<a href="https://godfield.net/">
 	<img src="../images/godfield.png" alt="GODFIELD" width="200"><br>
 	<p></p></a>
 	</section>
