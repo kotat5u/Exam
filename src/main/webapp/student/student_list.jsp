@@ -5,6 +5,7 @@
 <div id="wrapper">
 	<%@include file="../sidebar.jsp" %>
 	<div id="main">
+		<h2>学生管理</h2>
 		<%@include file="student_list_form.jsp" %>
 		<c:choose>
 			<c:when test="${SELECTerror == -1 }">

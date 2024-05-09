@@ -1,7 +1,6 @@
 <%@page pageEncoding="UTF-8" %>
 
 	<div>
-		<h2>学生管理</h2>
 		<a href="student_create.jsp">新規登録</a>
 		<form action="StudentExecute.action">
 
