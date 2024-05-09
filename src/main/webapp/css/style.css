@@ -42,19 +42,20 @@ header span {
 
 #mainmenu {
 	width: 460px;
-	float: left;
+	float: right;
 	margin: 0;
 }
 
-#tounaispecial {
+#special {
 	width: 260px;
-	float: left;
+	float: right;
 	margin: 0;
 }
 
 #sidebar {
+	border-right: solid 1px #777777;
 	height: 360px;
-	width: 260px;
+	width: 240px;
 	float: left;
 	margin: 0;
 }
