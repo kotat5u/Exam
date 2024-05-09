@@ -6,6 +6,10 @@ h2 {
 	background-color: #E8E9E9;
 }
 
+li {
+	list-style:none
+}
+
 header {
     width: 980px;
     height: 60px;
@@ -32,30 +36,37 @@ header span {
 	width: 980px;
 	margin: 20px auto;
 	overflow: hidden;
+	display:flex;
 }
 
 #main {
 	width: 720px;
 	float: right;
 	margin: 0;
+	padding-left: 10px;
+	border-left: solid 1px #777777;
 }
 
 #mainmenu {
-	width: 460px;
+	width: 440px;
 	float: right;
 	margin: 0;
+	padding-left: 9px;
+	padding-right: 9px;
+	border-right: solid 1px #777777;
+	border-left: solid 1px #777777;
 }
 
 #special {
-	width: 260px;
+	width: 240px;
 	float: right;
 	margin: 0;
+	padding: 10px;
 }
 
 #sidebar {
-	border-right: solid 1px #777777;
 	height: 360px;
-	width: 240px;
+	width: 260px;
 	float: left;
 	margin: 0;
 }
