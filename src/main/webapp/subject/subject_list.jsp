@@ -7,7 +7,7 @@
 <%@include file="../sidebar.jsp" %>
 	<div id="main">
 	<h2>科目管理</h2>
-	<a href="subject_create.jsp">新規登録</a>
+	<a href="subject_create.jsp" class="right">新規登録</a>
 	<table class="sql">
 	<tr>
     <th>科目コード</th>

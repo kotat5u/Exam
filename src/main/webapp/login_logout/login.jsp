@@ -18,7 +18,7 @@
 	</c:choose>
 	<input type="password" name="password" placeholder="20文字以内の半角英数字でご入力ください" maxlength="20" pattern="^[a-zA-Z0-9]+$" required id="password"><br>
 	<input type="checkbox" name="check_d_ps" id="showPassword" onchange="togglePasswordVisibility()"><label for="check_d_ps">パスワードを表示</label><br>
-	<input type="submit" value="ログイン"><br>
+	<input class="submit-blue" type="submit" value="ログイン"><br>
 	</form>
 </div>
 </div>

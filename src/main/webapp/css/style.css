@@ -18,6 +18,20 @@ header {
     background-color: #E7F1FF;
 }
 
+input[type="submit"]{
+	color: #FFFFFF;
+	border-radius: 5px;
+	border: none;
+	padding: 5px 10px;
+}
+
+.submit-grey{
+	background-color: #6B757F;
+}
+.submit-blue{
+	background-color: #0D6EFD;
+}
+
 header h1 {
     float: left;
     margin: 8px 20px;
@@ -104,10 +118,6 @@ footer p {
 	width: 130px;
 	margin: 10px 180px;
 	padding: 8px 35px;
-	color: #FFFFFF;
-	background-color: #0D6EFD;
-	border-radius: 5px;
-	border: none;
 }
 
 #login input[type="text"] {
@@ -194,6 +204,11 @@ footer p {
 	margin-top: 20px;
 	display: inline-block;
 }
+#csbj input[type="text"] {
+	width: 600px;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+}
 
 
 .sql {
@@ -215,6 +230,11 @@ footer p {
 	font-size: 14px;
 }
 
+.right {
+	display: block;
+	width: 640px;
+	text-align: right;
+}
 
 .error {
 	color: #FFD270;
