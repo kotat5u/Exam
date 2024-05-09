@@ -17,13 +17,14 @@
 			<c:otherwise>
 				<div>
 					検索結果:${studentlist.size() }件
-					<table>
+					<table class="sql">
 						<tr>
 							<th>入学年度</th>
 							<th>学生番号</th>
 							<th>氏名</th>
 							<th>クラス</th>
 							<th>在学中</th>
+							<th></th>
 						</tr>
 						
 						<c:forEach var="student" items="${studentlist }">

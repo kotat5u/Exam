@@ -2,8 +2,9 @@
 
 <%@ page pageEncoding="UTF-8" %>
 <div class="form">
-	<div>
-		科目情報
+	<div id="tlsbj">
+		<div>科目情報</div>
+		<div>
 		<table>
 		<tr>
 			<th>入学年度</th>
@@ -34,7 +35,7 @@
 		<td><select name="f3">
 			<c:choose>
 				<c:when test="${empty choiceSubject }"><option value="notselect" selected hidden>--------</option></c:when>
-				<c:otherwise><option value="${choiceSubject.name }" selected hidden>${choiceSubject.name }</option></c:otherwise>
+				<c:otherwise><option value="${choiceSubject.cd }" selected hidden>${choiceSubject.name }</option></c:otherwise>
 			</c:choose>
 			<c:forEach var="s" items="${subjectlist }">
 				<option value=${s.cd }>${s.name }</option>
@@ -46,12 +47,14 @@
 		</tr>
 		</form>
 		</table>
+		</div>
 		<c:if test="${testSubjectError == -1 }">
 		入学年度とクラスと科目を入力してください。
 		</c:if>
 	</div>
-	<div>
-		学生情報
+	<div id="tlstu">
+		<div>学生情報</div>
+		<div>
 		<form action="TestListStudentExecute.action">
 			<c:choose>
 				<c:when test="${empty choiceStudent }"><input type="text" name="f4" placeholder="学生番号を入力してください" required></c:when>
@@ -59,5 +62,6 @@
 			</c:choose>
 			<input type="submit" value="検索">
 		</form>
+		</div>
 	</div>
 </div>

@@ -5,12 +5,14 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="wrapper">
 <%@include file="../sidebar.jsp" %>
+	<div id="main">
 	<h2>科目管理</h2>
 	<a href="subject_create.jsp">新規登録</a>
-	<table>
+	<table class="sql">
 	<tr>
     <th>科目コード</th>
     <th>科目名</th>
+    <th></th><th></th>
     </tr>
     <c:forEach var="subject" items="${list }">
     <tr>
@@ -22,6 +24,7 @@
     </tr>
     </c:forEach>
     </table>
+    </div>
 </div>	
 
 	<%@include file="../footer.jsp" %>

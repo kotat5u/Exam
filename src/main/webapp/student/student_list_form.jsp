@@ -1,9 +1,9 @@
 <%@page pageEncoding="UTF-8" %>
-
-	<div>
-		<a href="student_create.jsp">新規登録</a>
+	<a href="student_create.jsp">新規登録</a>
+	<div class="form">
+		
 		<form action="StudentExecute.action">
-
+		<div id="stu">
 		<label for="f1">入学年度</label>
 		<select name="f1" id="f1">
 		<c:choose>
@@ -37,6 +37,7 @@
 		<td>
 			<input type="submit" value="絞込み">
 		</td>
+		</div>
 		</form>
 	</div>
 	

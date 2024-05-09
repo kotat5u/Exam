@@ -190,14 +190,17 @@ footer p {
 }
 
 .sql th {
-	font-weight:normal;
 	text-align: left;
 	border-bottom: solid 1px #000000;
 	padding-right: 10px;
+	font-size: 14px;
 }
 .sql td {
 	border-bottom: solid 1px #000000;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	padding-right: 10px;
+	font-size: 14px;
 }
 
 
