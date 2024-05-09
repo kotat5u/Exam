@@ -157,15 +157,39 @@ footer p {
 .form{
 	border: solid 1px#777777;
 	border-radius: 10px;
+	padding: 10px;
+	margin: 10px;
+#tlsbj {
+	height: 60px;
+	border-bottom: solid 1px#777777;
+}
+#tlstu {
+	height: 60px;
+}
+#tlsbj table {
+	border-spacing: 20px 0;
+}
+#tlsbj table tr th {
+	font-weight:normal
+}
+#tlsbj div {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+#tlstu div {
+	margin-top: 20px;
+	display: inline-block;
 }
 
 
 .sql {
 	width: 640px;
-	border-spacing: 0
+	border-spacing: 0;
 }
 
 .sql th {
+	font-weight:normal;
 	text-align: left;
 	border-bottom: solid 1px #000000;
 	padding-right: 10px;

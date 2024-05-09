@@ -13,8 +13,9 @@ public class MenuAction extends Action {
 		String now=LocalTime.now().toString();
 		now=(now.substring(0, now.indexOf(":")));
 		int time;
+		System.out.println(now);
 		switch (now) {
-				case "4", "5", "6", "7", "8", "9", "10":
+				case "04", "05", "06", "07", "08", "09", "10":
 					time=1;
 					break;
 				case "11", "12", "13":
