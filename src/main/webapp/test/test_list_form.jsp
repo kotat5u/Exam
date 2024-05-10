@@ -42,7 +42,7 @@
 			</c:forEach>
 		</select></td>
 		<td>
-			<input type="submit" value="検索">
+			<input class="submit-grey" type="submit" value="検索">
 		</td>
 		</tr>
 		</form>
@@ -60,7 +60,7 @@
 				<c:when test="${empty choiceStudent }"><input type="text" name="f4" placeholder="学生番号を入力してください" required></c:when>
 				<c:otherwise><input type="text" name="f4" value="${choiceStudent.no }" placeholder="学生番号を入力してください" required></c:otherwise>
 			</c:choose>
-			<input type="submit" value="検索">
+			<input class="submit-grey" type="submit" value="検索">
 		</form>
 		</div>
 	</div>

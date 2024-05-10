@@ -7,6 +7,7 @@
 	<div id="main">
 	<h2>成績管理</h2>
 	<p class="result">登録が完了しました。</p>
+	<br><br><br><br><br>
 	<a href="TestRegist.action">戻る</a>
 	<a href="TestList.action">成績参照</a>
 	</div>

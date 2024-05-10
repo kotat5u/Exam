@@ -1,21 +1,22 @@
 <%@ page pageEncoding="UTF-8" %>
 
 <%@include file="../header.jsp" %>
+<div id="wrapper">
 <%@include file="../sidebar.jsp" %>
-<!DOCTYPE html>
-<html>
-	<heder>
+
+	<div id="main">
 	<h2>科目情報変更</h2>
-		<form action="SubjectUpdateExecute.action">
-	<label>科目コード</label>
-    <input type="text" value="${updatesubject.cd}" name="cd"readonly="readonly">
-    <label>科目名</label>
+	<form id="cu" action="SubjectUpdateExecute.action">
+	<label>科目コード</label><br>
+    <input type="text" value="${updatesubject.cd}" name="cd"readonly="readonly"><br>
+    <label>科目名</label><br>
    	<input type="text"maxlength="20" required id="readnly" name="name" 
-    sbcode="subject" value="${updatesubject.name}" required>
-    <input type="submit" value="変更">
+    sbcode="subject" value="${updatesubject.name}" required><br>
+    <input class="submit-blue" type="submit" value="変更"><br>
     <a href="subject_list.jsp">戻る</a>
-    <body>
-    
-	</heder>	
-	<%@include file="../footer.jsp"%>
+	</form>
+	</div>
+</div>
+	
+<%@include file="../footer.jsp"%>
 	

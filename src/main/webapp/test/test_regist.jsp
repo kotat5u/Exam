@@ -38,7 +38,7 @@
 		</tr>
 		</c:forEach>
 		</table>
-		<input type="submit" value="登録して終了">
+		<input class="submit-grey" type="submit" value="登録して終了">
 		</form>
 	</div>
 	</c:if>

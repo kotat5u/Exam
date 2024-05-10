@@ -2,20 +2,20 @@
 
 
 <%@include file="../header.jsp"%>
-<%@include file="../sidebar.jsp"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<div id="wrapper">
+<%@include file="../sidebar.jsp"%>
+<div id="main">
 <form action="SubjectDeleteExecute.action">
 
 
     <p><label>「${deletesubject.name}(${deletesubject.cd })」を削除してもよろしいですか</label></p>
-	<input type="submit" value="削除">
+	<input class="submit-red" type="submit" value="削除">
 	
 	
 </form>
 <a href="subject_list.jsp">戻る</a>
-<body>
-</heder>
+</div></div>
 	<%@include file="../footer.jsp"%>
-<%@page contentType="text/html; charset=UTF-8"%>
+
 

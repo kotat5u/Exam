@@ -35,7 +35,7 @@
 			</c:otherwise>
 		</c:choose>
 		<td>
-			<input type="submit" value="絞込み">
+			<input class="submit-grey" type="submit" value="絞込み">
 		</td>
 		</div>
 		</form>

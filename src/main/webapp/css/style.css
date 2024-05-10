@@ -10,6 +10,7 @@ li {
 	list-style:none
 }
 
+
 header {
     width: 980px;
     height: 60px;
@@ -30,6 +31,9 @@ input[type="submit"]{
 }
 .submit-blue{
 	background-color: #0D6EFD;
+}
+.submit-red{
+	background-color: #DC3545;
 }
 
 header h1 {
@@ -102,7 +106,10 @@ footer p {
 
 
 
-
+#logout {
+	width: 720px;
+	margin: 0 auto;
+}
 
 #login {
 	width: 490px;
@@ -204,8 +211,24 @@ footer p {
 	margin-top: 20px;
 	display: inline-block;
 }
-#csbj input[type="text"] {
+
+#tr div {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#tr div form table tr th {
+	font-weight:normal
+}
+
+#cu input[type="text"] {
 	width: 600px;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+}
+#cu select {
+	width: 624px;
 	padding: 5px 10px;
 	margin-bottom: 10px;
 }
@@ -224,8 +247,8 @@ footer p {
 }
 .sql td {
 	border-bottom: solid 1px #000000;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	padding-right: 10px;
 	font-size: 14px;
 }
@@ -236,7 +259,33 @@ footer p {
 	text-align: right;
 }
 
+.result {
+	background-color: #8CC3A9;
+	text-align: center;
+	width: 100%;
+}
+
 .error {
 	color: #FFD270;
 	margin: 0;
+}
+
+.a {
+	background-color: #EEEEFF;
+	color: #00aaff;
+	padding: 5px 10px;
+	border-radius: 5px;
+	text-decoration:none;
+	border-bottom: solid 2px #00AAFF;
+	border-right: solid 2px #00AAFF;
+/*	background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 90%, #777777 90%, #777777 100%);*/
+}
+.a:hover {
+	border-bottom: solid 1px #00AAFF;
+	border-right: solid 1px #00AAFF;
+/*	background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 90%, #FFFFFF 90%, #FFFFFF 100%);*/
+}
+.a:visited{
+	color: #0000EE;
+	border: #0000EE;
 }

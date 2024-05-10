@@ -1,11 +1,12 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../header.jsp" %>
+<div id="wrapper">
 <%@include file="../sidebar.jsp" %>
-<html>
-	<heder>
+<div id="main">
 	<h2>科目情報登録</h2>
-	<label>登録が完了しました</label>
+	<label><p class="result">登録が完了しました</p></label>
+	<br><br><br><br><br>
 	<a href="subject_create.jsp">戻る</a>
 	<a href="SubjectList.action">科目一覧</a>
-	</heder>
+	</div></div>
 <%@include file="../footer.jsp" %>

@@ -2,8 +2,9 @@
 
 <%@ page pageEncoding="UTF-8" %>
 
-	<div>
-		科目情報
+	<div class="form" id="tr">
+		<div>科目情報</div>
+		<div>
 		<form action="TestRegist.action">
 		<table>
 		<tr>
@@ -49,7 +50,7 @@
 			<option value="2">2</option>
 		</select></td>
 		<td>
-			<input type="submit" value="検索">
+			<input class="submit-grey" type="submit" value="検索">
 		</td>
 		</tr>
 		</table>
@@ -57,4 +58,5 @@
 		<c:if test="${testRegistError == -1 }">
 		入学年度とクラスと科目と回数を入力してください。
 		</c:if>
+		</div>
 	</div>

@@ -6,22 +6,22 @@
 	<%@include file="../sidebar.jsp" %>
 	<div id="main">
 		<h2>学生情報変更</h2>
-		<form action="StudentUpdateExecute.action">
+		<form id="cu" action="StudentUpdateExecute.action">
 		
 		<c:if test="${ErrorYAO == -1 }">
 		<p class="error">再入力してクレメンス～</p>
 		<br>
 		</c:if>
-		<label for="ent_year">入学年度</label>
+		<label for="ent_year">入学年度</label><br>
 		<input type="text" name="ent_year" value="${studentinfo.entYear }" readonly="readonly">
 		<br>
-		<label for="no">学生番号</label>
+		<label for="no">学生番号</label><br>
 		<input type="text" name="no" value="${studentinfo.no }" readonly="readonly">
 		<br>
-		<label for="name">氏名</label>
+		<label for="name">氏名</label><br>
 		<input type="text" maxlength="10" name="name" value="${studentinfo.name }" required>
 		<br>
-		<label for="classNum">クラス</label>
+		<label for="classNum">クラス</label><br>
 		<select name="class_num" id="class_num">
 			<c:forEach var="num" items="${classlist }">
 				<c:choose>
@@ -40,7 +40,7 @@
 			</c:otherwise>
 		</c:choose>
 		<br>
-		<input type="submit" id="submit_botton" value="変更">
+		<input class="submit-blue" type="submit" id="submit_botton" value="変更">
 		<br>
 		<a href="../student/StudentList.action">戻る</a>
 		</form>

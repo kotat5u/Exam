@@ -7,7 +7,7 @@
 <%@include file="../sidebar.jsp"%>
 
 <div id="main">
-<form action="SubjectCreateExecute.action" id="csbj">
+<form action="SubjectCreateExecute.action" id="cu">
 	<label>科目コード<br><input type="text" maxlength="3" required id="readnly" name="cd"
 		sbcode="subject" placeholder="科目コードを入力して下さい" required></label>
 	<br>
