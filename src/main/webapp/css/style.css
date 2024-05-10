@@ -251,6 +251,7 @@ footer p {
 	padding-bottom: 10px;
 	padding-right: 10px;
 	font-size: 14px;
+	height: 25px;
 }
 
 .right {
@@ -273,7 +274,7 @@ footer p {
 .a {
 	background-color: #EEEEFF;
 	color: #00aaff;
-	vertical-align: 2px;
+	vertical-align: 4px;
 	padding: 10px;
 	padding-top: 2px;
 	padding-bottom: 6px;
@@ -281,13 +282,13 @@ footer p {
 	text-decoration:none;
 	border: solid 1px #00AAFF;
 
-	background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 93%, #777777 93%, #777777 100%);
+	background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 92%, #777777 92%, #777777 100%);
 }
 .a:hover {
 	vertical-align: 0px;
 	padding-top: 4px;
 	padding-bottom: 4px;
-	background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 93%, #FFFFFF 93%, #FFFFFF 100%);
+	background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 92%, #FFFFFF 92%, #FFFFFF 100%);
 }
 .a:visited{
 	color: #0000EE;
