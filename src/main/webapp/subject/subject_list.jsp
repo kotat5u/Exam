@@ -8,6 +8,7 @@
 	<div id="main">
 	<h2>科目管理</h2>
 	<a href="subject_create.jsp" class="right">新規登録</a>
+	<div>
 	<table class="sql">
 	<tr>
     <th>科目コード</th>
@@ -24,7 +25,7 @@
     </tr>
     </c:forEach>
     </table>
-    </div>
+</div></div>
 </div>	
 
 	<%@include file="../footer.jsp" %>

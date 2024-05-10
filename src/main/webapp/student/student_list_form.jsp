@@ -1,5 +1,5 @@
 <%@page pageEncoding="UTF-8" %>
-	<a href="student_create.jsp">新規登録</a>
+	<a href="student_create.jsp" class="right">新規登録</a>
 	<div class="form">
 		
 		<form action="StudentExecute.action">

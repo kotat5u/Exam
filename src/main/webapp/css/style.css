@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+html {
+ overflow-y: scroll;
+}
 
 h2 {
 	margin: 0;
@@ -63,6 +66,9 @@ header span {
 	margin: 0;
 	padding-left: 10px;
 	border-left: solid 1px #777777;
+}
+#main div {
+	max-width: 700px
 }
 
 #mainmenu {
@@ -271,9 +277,16 @@ footer p {
 	margin: 0;
 }
 
+a {
+	color: #00aaff;
+}
+a:visited {
+	color: #0000EE;
+}
+
 .a {
 	background-color: #EEEEFF;
-	color: #00aaff;
+	
 	vertical-align: 4px;
 	padding: 10px;
 	padding-top: 2px;
@@ -291,6 +304,6 @@ footer p {
 	background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 92%, #FFFFFF 92%, #FFFFFF 100%);
 }
 .a:visited{
-	color: #0000EE;
+	
 	border: #0000EE;
 }
