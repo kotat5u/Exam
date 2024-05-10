@@ -13,15 +13,11 @@
 	<body>
 	<header>
 	<h1>得点管理システム</h1>
-	<span>${teacher.name }様
-	<a href="../login_logout/Logout.action">ログアウト</a>
 	</span>
 	</header>	
 
 <div id="wrapper">
-	<%-- サイドバー読み込み --%>
-	<%@include file="../sidebar.jsp" %>
-	<div id="main">
+	<div id="logout">
 	エラーが発生しました
 	</div>
 </div>
