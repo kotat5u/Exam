@@ -273,17 +273,21 @@ footer p {
 .a {
 	background-color: #EEEEFF;
 	color: #00aaff;
-	padding: 5px 10px;
+	vertical-align: 2px;
+	padding: 10px;
+	padding-top: 2px;
+	padding-bottom: 6px;
 	border-radius: 5px;
 	text-decoration:none;
-	border-bottom: solid 2px #00AAFF;
-	border-right: solid 2px #00AAFF;
-/*	background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 90%, #777777 90%, #777777 100%);*/
+	border: solid 1px #00AAFF;
+
+	background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 93%, #777777 93%, #777777 100%);
 }
 .a:hover {
-	border-bottom: solid 1px #00AAFF;
-	border-right: solid 1px #00AAFF;
-/*	background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 90%, #FFFFFF 90%, #FFFFFF 100%);*/
+	vertical-align: 0px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 93%, #FFFFFF 93%, #FFFFFF 100%);
 }
 .a:visited{
 	color: #0000EE;
