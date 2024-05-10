@@ -49,9 +49,10 @@
 			</c:otherwise>
 		</c:choose>
 	</section>
+	<br>
 	<section id="katoh">
 	<a href="https://godfield.net/">
-	<img src="../images/godfield.png" alt="GODFIELD" width="200"><br>
+	<img src="../images/godfield.png" alt="GODFIELD" width="232">
 	<p></p></a>
 	</section>
 	</div>

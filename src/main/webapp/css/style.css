@@ -307,3 +307,11 @@ a:visited {
 	
 	border: #0000EE;
 }
+
+#tounai p{
+	border: double 3px #00AAFF;
+	padding: 5px;
+}
+#katoh img{
+	border: outset 4px #8CC3A9;
+}
