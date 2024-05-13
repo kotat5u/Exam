@@ -3,6 +3,7 @@
 <%@include file="../logoutheader.jsp" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="wrapper">
+<div></div>
 <div id="login">
 	<h2>ログイン</h2>
 	<c:choose>

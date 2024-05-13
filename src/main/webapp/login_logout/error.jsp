@@ -17,6 +17,7 @@
 	</header>	
 
 <div id="wrapper">
+	<div></div>
 	<div id="logout">
 	エラーが発生しました
 	</div>

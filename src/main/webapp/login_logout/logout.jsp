@@ -2,6 +2,7 @@
 
 <%@include file="../logoutheader.jsp" %>
 <div id="wrapper">
+<div></div>
 <div id="logout">
 	<h2>ログアウト</h2>
 	<p class="result">ログアウトしました</p>
