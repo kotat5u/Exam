@@ -39,6 +39,13 @@ input[type="submit"]{
 	background-color: #DC3545;
 }
 
+input[readonly="readonly"]{
+	border: none;
+}
+input[readonly="readonly"]:focus{
+	outline: none;
+}
+
 header h1 {
     float: left;
     margin: 8px 20px;
@@ -307,6 +314,7 @@ a:visited {
 	
 	border: #0000EE;
 }
+
 
 #tounai p{
 	border: double 3px #00AAFF;
