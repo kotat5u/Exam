@@ -33,10 +33,10 @@
 		<br>
 		<c:choose>
 			<c:when test="${studentinfo.isAttend == true }">
-				<label><input type="checkbox" name="is_attend" value="true" checked>在学中</label>
+				<label>在学中<input type="checkbox" name="is_attend" value="true" checked></label>
 			</c:when>
 			<c:otherwise>
-				<input type="checkbox" name="is_attend" value="true">在学中</label>
+				<label>在学中<input type="checkbox" name="is_attend" value="true"></label>
 			</c:otherwise>
 		</c:choose>
 		<br>
