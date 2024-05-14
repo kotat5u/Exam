@@ -14,13 +14,13 @@ public class MenuAction extends Action {
 		now=(now.substring(0, now.indexOf(":")));
 		int time;
 		switch (now) {
-				case "19", "20", "21", "22", "23", "00", "01":
+				case "04", "05", "06", "07", "08", "09", "10":
 					time=1;
 					break;
-				case "02", "03", "04":
+				case "11", "12", "13":
 					time=2;
 					break;
-				case "05", "06", "07", "08", "09":
+				case "14", "15", "16", "17", "18":
 					time=3;
 					break;
 				default:
