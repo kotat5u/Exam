@@ -49,7 +49,7 @@
 		</table>
 		</div>
 		<c:if test="${testSubjectError == -1 }">
-		<br><p>入学年度とクラスと科目を入力してください。</p>
+		<br><p class="error">入学年度とクラスと科目を入力してください。</p>
 		</c:if>
 	</div>
 	<div id="tlstu">
