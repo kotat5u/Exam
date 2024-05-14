@@ -266,6 +266,9 @@ footer p {
 	font-size: 14px;
 	height: 25px;
 }
+.center {
+	text-align: center;
+}
 
 .right {
 	display: block;
