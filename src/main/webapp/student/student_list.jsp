@@ -9,10 +9,10 @@
 		<%@include file="student_list_form.jsp" %>
 		<c:choose>
 			<c:when test="${SELECTerror == -1 }">
-				<p class="error">クラスを指定する場合は入学年度も指定してください。</p>
+				<p>クラスを指定する場合は入学年度も指定してください。</p>
 			</c:when>
 			<c:when test="${studentlist.size()==0 }">
-				<p class="error">学生情報が存在しませんでした。</p>
+				<p>学生情報が存在しませんでした。</p>
 			</c:when>
 			<c:otherwise>
 				<div>
