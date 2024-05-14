@@ -46,3 +46,5 @@
 		</form>
 	</div>
 </div>
+
+<%@include file="../footer.jsp" %>
