@@ -3,7 +3,6 @@
 <%@ page pageEncoding="UTF-8" %>
 
 	<div class="form" id="tr">
-		<div>科目情報</div>
 		<div>
 		<form action="TestRegist.action">
 		<table>
