@@ -27,13 +27,13 @@
 				</c:when>
 				<c:otherwise>
 					<input type="text" maxlength="10" name="no" value="${no }"
-						placeholder="学生番号を入力してください。" required>
+						placeholder="学生番号を入力してください。" required><br>
 			<c:if test="${PKerrorDAO == -1 }">
 				<p class="error">学生番号が重複しています</p>
 			</c:if>
 				</c:otherwise>
 			</c:choose>
-			<br>
+			
 		<label for="name">氏名</label><br>
 			<c:choose>
 				<c:when test="${EDOKKOerror == -1 }">
