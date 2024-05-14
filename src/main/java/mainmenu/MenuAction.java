@@ -14,13 +14,13 @@ public class MenuAction extends Action {
 		now=(now.substring(0, now.indexOf(":")));
 		int time;
 		switch (now) {
-				case "04", "05", "06", "07", "08", "09", "10":
+				case "19", "20", "21", "22", "23", "00", "01":
 					time=1;
 					break;
-				case "11", "12", "13":
+				case "02", "03", "04":
 					time=2;
 					break;
-				case "14", "15", "16", "17", "18":
+				case "05", "06", "07", "08", "09":
 					time=3;
 					break;
 				default:
@@ -28,6 +28,7 @@ public class MenuAction extends Action {
 		}
 		
 		request.setAttribute("now", time);
+//		request.setAttribute("oclock", now);
 		
 		return "mainmenu.jsp";
 	}
