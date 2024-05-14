@@ -10,7 +10,7 @@
 	<%@include file="test_regist_form.jsp" %>
 	<c:if test="${empty first }">
 	<div>
-		<h2>科目:${TRchoiceSubject.name }(${TRchoiceNum }回)</h2>
+		科目:${TRchoiceSubject.name }(${TRchoiceNum }回)
 		<form action="TestRegistExecute.action">
 		<table class="sql">
 		<tr>
