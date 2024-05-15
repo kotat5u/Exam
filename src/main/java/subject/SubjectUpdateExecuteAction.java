@@ -29,6 +29,10 @@ public class SubjectUpdateExecuteAction extends Action {
 
 			SubjectDAO dao=new SubjectDAO();
 			
+			if (dao.get(cd, t.getSchool()).getCd() == null) {
+				request.setAttribute("fuckingError", -1);
+				return "subject_update.jsp";
+			}
 			dao.save(subject);
 		
 		return  "subject_update_done.jsp";
