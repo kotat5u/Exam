@@ -55,13 +55,22 @@
 	<div id="tlstu">
 		<div>学生情報</div>
 		<div>
+		<table>
 		<form action="TestListStudentExecute.action">
+			<tr><th>
+			学生番号
+			</th></tr>
+			<tr><td>
 			<c:choose>
 				<c:when test="${empty choiceStudent }"><input type="text" name="f4" placeholder="学生番号を入力してください" required></c:when>
 				<c:otherwise><input type="text" name="f4" value="${choiceStudent.no }" placeholder="学生番号を入力してください" required></c:otherwise>
 			</c:choose>
+			</td>
+			<td>
 			<input class="submit-grey" type="submit" value="検索">
+			</td></tr>
 		</form>
+		</table>
 		</div>
 	</div>
 </div>
