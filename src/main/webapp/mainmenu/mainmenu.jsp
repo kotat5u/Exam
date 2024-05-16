@@ -10,17 +10,16 @@
 	<div id="mainmenu">
 	<h2>メニュー</h2>
 	<section>
-	<div class="red menu">
+	<div class="menu one">
 		<a href="../student/StudentList.action">学生管理</a>
 	</div>
-	<div class="green menu">
-		<div>
-		成績管理<br>
-		<a href="../test/TestRegist.action">成績登録</a><br>
-		<a href="../test/TestList.action">成績参照</a>
-		</div>
+	<div class="menu two">
+		<a href="../test/TestRegist.action">成績登録</a>
 	</div>
-	<div class="blue menu">
+	<div class="menu three">
+		<a href="../test/TestList.action">成績参照</a>
+	</div>
+	<div class="menu four">
 		<a href="../subject/SubjectList.action">科目管理</a>
 	</div>
 	</section>
