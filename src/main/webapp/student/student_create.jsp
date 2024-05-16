@@ -23,7 +23,7 @@
 			<c:choose>
 				<c:when test="${EDOKKOerror == -1 }">
 					<input type="text" maxlength="10" name="no" value="${studentinfo.no }"
-						placeholder="学生番号を入力してください。" required>
+						placeholder="学生番号を入力してください。" required><br>
 				</c:when>
 				<c:otherwise>
 					<input type="text" maxlength="10" name="no" value="${no }"
