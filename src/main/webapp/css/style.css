@@ -221,24 +221,40 @@ footer p {
 /*}*/
 .menu {
 	display: inline-block;
-	height: 207px;
-	width: 72px;
+	height: 289px;
+	width: 100px;
+	margin-left: 5px;
 }
-.menu a{
-	height: 207px;
-	width: 72px;
+.menu a {
+	height: 289px;
+	width: 100px;
+	display: block;
+	text-decoration: none;
 }
+
 .one a{
-	background: url('../images/def.png');
+	background: url('../images/kaeru1.png');
+}
+.one a:hover{
+	background: url('../images/kaeru2.png');
 }
 .two a{
-	background: url('../images/huh.png');
+	background: url('../images/neko1.png');
+}
+.two a:hover{
+	background: url('../images/neko2.png');
 }
 .three a{
-	background: url('../images/ohh.png');
+	background: url('../images/usagi1.png');
+}
+.three a:hover{
+	background: url('../images/usagi2.png');
 }
 .four a{
-	background: url('../images/wow.png');
+	background: url('../images/kitune1.png');
+}
+.four a:hover{
+	background: url('../images/kitune2.png');
 }
 
 .form{
